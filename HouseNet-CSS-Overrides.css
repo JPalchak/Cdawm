@@ -1,0 +1,2231 @@
+///---------------------------------
+///Starting Point Overrides
+///---------------------------------
+
+// PLEASE DO NOT EDIT THIS AREA WITHOUT APPROVAL FROM A DESIGNER OR WITHOUT AN UNDERSTANDING OF CSS / LESS
+
+///---------------------------------
+///MASTHEAD, BRAND, NAV-BAR-CONTAINER, STATUS CONTAINER, FOOTER CODE
+///--------------------------------
+
+//Masthead - Center Align Elements
+//---------------------------
+@media (min-width: 980px) {
+    #header-container.is-stuck,
+    #header-container.is-condensed {
+        .header-content {
+            min-height: @masthead-condensed-height;
+        }
+    }
+
+    #header-container {
+        &:not(.is-stuck) {
+            &:not(.is-condensed) {
+                .header-content {
+                    min-height: @masthead-condensed-height;
+                }
+            }
+        }
+    }
+
+    #status-banner {
+        .header-content {
+            .status-container {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    #nav-bar-container {
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            min-height: @masthead-condensed-height;
+        }
+    }
+
+    #nav-bar-more {
+        .nav-bar {
+            min-height: 3.5rem; // More Navigation bar to stay the original height
+        }
+    }
+}
+
+//Masthead - Stuck By Default
+//---------------------------
+@media (min-width: 980px) {
+
+    #header-container:not(.is-stuck):not(.is-condensed) .header-content {
+        display: flex;
+
+        .status-container {
+            order: 3;
+            flex: 0 0 auto;
+        }
+
+        .brand {
+            order: 1;
+            flex: 0 0 @brand-width !important;
+            margin: 0 auto 0 !important;
+            padding: @brand-padding !important;
+
+            .logo img {
+                max-width: @brand-width;
+            }
+
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+
+        #nav-bar-container {
+            flex: 1 1 auto;
+            order: 2;
+            margin-right: 1rem;
+            width: auto;
+            text-align: @nav-bar-position;
+
+            .nav-bar-link:not(.dropdown-link) {
+                padding: @nav-bar-item-padding-vertical @nav-bar-item-padding-horizontal;
+            }
+        }
+    }
+
+    #header-container.is-stuck .header-content,
+    #header-container.is-condensed .header-content {
+
+        .brand {
+            order: 1;
+            flex: 0 0 @brand-width !important;
+            margin: 0 auto 0 !important;
+            padding: @brand-padding !important;
+
+            .logo img {
+                max-width: @brand-width;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 980px) {
+    #header-container:not(.is-stuck):not(.is-condensed) .header-content {
+
+        #nav-bar-container .nav-bar {
+            max-width: 579px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #header-container:not(.is-stuck):not(.is-condensed) .header-content,
+    #header-container.is-stuck .header-content,
+    #header-container.is-condensed .header-content {
+
+        #nav-bar-container .nav-bar {
+            max-width: 809px;
+        }
+
+        .brand {
+            flex: 0 0 @brand-width;
+            padding: @brand-padding !important;
+
+            .logo img {
+                max-width: @brand-width;
+            }
+        }
+    }
+}
+
+.logo-mobile {
+    max-width: @brand-width !important; /* This is/was hard coded */
+}
+
+#status-banner .header-content .brand .logo img {
+    max-height: @brand-condensed-max-height !important;
+}
+
+
+//END OF MASTHEAD CHANGES
+//---------------------------
+
+
+//---------------------------
+//NEU-15615
+//FOOTER LAYOUT
+//---------------------------
+.site-footer .footer-container {
+    margin: -40px 0 0 0;
+}
+
+.site-footer #back-to-top {
+    left: 100% !important;
+    position: relative;
+    margin: 0 0 0 -40px;
+    top: -35px !important;
+}
+
+.site-footer .footer-container .breadcrumbs-container {
+    margin: 1rem 0 0.5rem;
+
+    nav > ul {
+        justify-content: flex-start !important;
+    }
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    > div {
+        flex: 1 0 50%;
+
+        &:first-child {
+            flex: 1 0 100%;
+            border-bottom: 1px solid #e2e2e2;
+            margin-bottom: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+    }
+
+    .footer-social {
+        text-align: right;
+        order: 2;
+        margin: 1rem 0 0 0;
+    }
+
+    .colophon {
+        text-align: left;
+        position: relative;
+        top: 15px;
+    }
+}
+
+///---------------------------------
+///END OF MASTHEAD, BRAND, NAV-BAR-CONTAINER, STATUS CONTAINER, FOOTER CODE
+///---------------------------------
+
+
+///-----------------------------------
+///NEU-13498
+///BROADCAST TOP BANNER
+///Font Awesome Bullhorn with CSS Circles
+///------------------------------------
+
+@broadcast-banner-bg: darken(@orange,1%);
+@broadcast-banner-item: @white;
+
+// Banner - button
+@broadcast-banner-btn-size: @base-font-size;
+@broadcast-banner-btn-item: @broadcast-banner-item;
+@broadcast-banner-btn-background: transparent;
+@broadcast-banner-btn-border: 1px solid @broadcast-banner-item;
+@broadcast-banner-btn-solid: @broadcast-banner-item;
+@broadcast-banner-btn-solid-item: @broadcast-banner-bg;
+@broadcast-banner-btn-solid-border: 1px solid @broadcast-banner-item;
+@broadcast-banner-btn-radius: @base-button-radius;
+
+#broadcast-banner-container {
+    background-color: @broadcast-banner-bg;
+    position: relative;
+
+    .alert {
+
+        .button.close {
+            color: @broadcast-banner-item;
+            opacity: 1;
+        }
+
+        .close {
+            color: @white !important;
+            text-shadow: none !important;
+            opacity: 0.9 !important;
+            filter: alpha(opacity=90) !important;
+        }
+
+        background: none;
+        border: none;
+        color: @broadcast-banner-item;
+        position: relative;
+        min-height: 4.5rem;
+        display: flex;
+        padding: 0 10rem 0 10rem;
+        z-index: 1;
+        justify-content: center;
+
+        strong {
+            font-size: @size-5;
+            color: @broadcast-banner-item;
+        }
+
+        a:not(.button) {
+            border: @broadcast-banner-btn-border;
+            text-decoration: none;
+            padding: @base-button-padding-vertical @base-button-padding-horizontal;
+            border-radius: @broadcast-banner-btn-radius;
+            font-size: @broadcast-banner-btn-size;
+            color: @broadcast-banner-btn-item;
+            font-weight: 400;
+            background-color: @broadcast-banner-btn-background;
+            right: 2rem !important;
+
+            &:hover, &:focus {
+                background: @broadcast-banner-btn-solid;
+                color: @broadcast-banner-btn-solid-item;
+                border: @broadcast-banner-btn-solid-border;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 980px) {
+    #broadcast-banner-container {
+        overflow: hidden;
+
+        &:after, &:before {
+            display: block;
+            border-radius: @radius-rounded;
+            position: absolute;
+            content: "";
+        }
+
+        &:after {
+            background: fade(@broadcast-banner-item, 4%);
+            width: 170px;
+            height: 170px;
+            left: 50%;
+            top: -33px;
+        }
+
+        &:before {
+            background: fade(@broadcast-banner-item, 2%);
+            width: 300px;
+            height: 300px;
+            left: 50%;
+            top: -100px;
+        }
+
+        .alert {
+            padding: 0 10rem 0 10rem;
+
+            .button.close {
+                color: @broadcast-banner-item;
+                opacity: 1;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            a:not(.button) {
+                position: absolute;
+                right: 0;
+            }
+
+            &:before {
+                content: "\f0a1";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: absolute;
+                left: 0;
+                font-size: 2rem;
+                color: fade(@broadcast-banner-item, 70%);
+                background: fade(@broadcast-banner-item, 8%);
+                border-radius: @radius-rounded;
+                padding: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &:after {
+                display: block;
+                width: 130px;
+                height: 130px;
+                border-radius: @radius-rounded;
+                position: absolute;
+                left: -17px;
+                content: "";
+                background: fade(@broadcast-banner-item, 6%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:979px) {
+
+    #broadcast-banner-container {
+        .alert {
+            padding: 1rem;
+
+            strong {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width:980px) {
+    #broadcast-banner-container {
+
+
+        &:after {
+            margin-left: -507px;
+            top: -24px;
+        }
+
+        &:before {
+            margin-left: -570px;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    #broadcast-banner-container {
+
+
+        &:after {
+            margin-left: -624px;
+        }
+
+        &:before {
+            margin-left: -680px;
+        }
+    }
+}
+
+///---------------------------------
+///END OF BROADCAST TOP BANNER
+///---------------------------------
+
+
+///--------------------------
+///BASE UI ELEMENTS
+///--------------------------
+
+body {
+    font-weight: @base-font-weight;
+}
+
+//------------------------------------
+//NEU-00000
+//Input placeholder - override for missing placeholder text colour
+//---------------------------------
+input[type="text"], textarea {
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: @gray;
+        opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: @gray;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: @gray;
+    }
+}
+
+///--------------------------
+///MASTHEAD AND TOP NAV
+///--------------------------
+
+//---------------------------
+//NEU-15616
+//OPTION FOR MASTHEAD TOP BORDER
+//---------------------------
+#header-container {
+    border-top: 0px solid transparent;
+}
+
+//---------------------------
+//NEU-15617
+//OPTION FOR TOP NAV BOLD OR HEADING FONT FAMILY
+//---------------------------
+#site-navigation-more .nav-bar-item > a, #site-navigation .nav-bar-item div > a,
+#site-navigation-more .nav-bar-item div > a,
+#site-navigation .nav-bar-nav-more, #site-navigation-more .nav-bar-nav-more {
+    font-weight: 400;
+    font-family: @base-heading-font-family;
+}
+
+
+//---------------------------
+//NEU-15500
+//OPTION TO STYLE MEGAMENU HEADINGS
+//---------------------------
+#nav-bar-overflow .site-navigation-overflow li.nav-bar-item.is-heading > span,
+#nav-bar-more-overflow .site-navigation-overflow li.nav-bar-item.is-heading > span,
+#nav-bar-overflow .site-navigation-overflow li.nav-bar-item.is-heading > a,
+#nav-bar-more-overflow .site-navigation-overflow li.nav-bar-item.is-heading > a {
+    font-weight: @base-heading-font-weight;
+    color: @white;
+    font-size:1.1rem;
+    font-style: italic;
+    font-family: @base-heading-font-family;
+}
+
+
+//---------------------------
+//NEU-15866
+//SYNOPSIS - VARIABLES NOT AVAILABLE
+//---------------------------
+
+.escape-close, .escape-close:hover {
+    color: @synopsis-heading-color;
+}
+
+.synopsis.intro .control.search-field.has-options .input.input.is-medium {
+    border-radius: @base-button-radius;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 2px solid fade(@red,90%);
+    font-family: @font-family;
+    font-weight: @base-font-weight;
+
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: fade(@gray-dark,60%);
+        opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: fade(@gray-dark,60%);
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: fade(@gray-dark,60%);
+    }
+}
+
+.synopsis.intro .control.search-field.has-options .input.input.is-medium:hover,
+.synopsis.intro .control.search-field.has-options .input.input.is-medium:active,
+.synopsis.intro .control.search-field.has-options .input.input.is-medium:focus {
+    border: 2px solid lighten(@orange,5%) !important;
+}
+
+//Shorten Search Input Width
+.synopsis.intro:not(.is-admin) .content-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+
+///----------------------------
+///NEU-18125
+///SYNOPSIS MANAGE PAGES
+///Option to set to Synopsis Admin Background
+///----------------------------
+
+//Contrasts behind the variables under //Synopis Admin
+//By default this background is set to @gray-lightest
+
+.synopsis.intro.is-admin {
+    background-color: @synopsis-intro-background !important;
+}
+
+
+///----------------------------
+///NEU-15885
+///SYNOPSIS AUTHOR - Stacked Blog Layout needs variables
+///----------------------------
+.synopsis.author h5 a,
+.synopsis.author .author-container.is-stacked footer.details dl dd span {
+    color: @base-text-color !important;
+}
+
+.synopsis.author h5 a:not(.button):hover, .synopsis.author a:not(.button):active, .synopsis.author a:not(.button):focus {
+    color: @link-color-hover !important;
+}
+
+//-------------------------------------
+//NEU-18729
+//Author link colour to use @synopsis-author-item variable on Cover Background layout
+//-------------------------------------
+.has-overlay.is-inverted .synopsis.author a:not(.button),
+.synopsis.author a:not(.button) {
+    color: @synopsis-author-item !important;
+}
+
+
+///---------------------------------
+///NEU-14394
+///CHANGE THE PROFILE BANNER IMAGE
+///---------------------------------
+
+//overlay value
+#profile .synopsis.has-overlay:before {
+    background-color: rgba(8,8,8,0.0);
+}
+
+//disable img
+#profile .synopsis.has-overlay > img {
+    display: none !important;
+}
+
+//set BG as colour
+#profile .synopsis.has-overlay {
+    background: url(/utilities/assets/handler/asset.ashx?asset=250376&size=6) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+//optional
+ul.is-profile-actions li dl.is-small-line-height,
+#profile .has-overlay.is-inverted a:not(.button) {
+    color: @white;
+}
+
+
+///-----------------------------------
+///NEU-15618
+///CALENDAR COLOURS TO USE BRAND COLOURS
+///-----------------------------------
+
+.Category-Select .rsCategoryRed span, #displayColour .rsCategoryRed span, .Category-Select.catColour1, #displayColour.catColour1 {
+    background: @red;
+}
+
+.Category-Select .rsCategoryDarkBlue span, #displayColour .rsCategoryDarkBlue span, .Category-Select.catColour2, #displayColour.catColour2 {
+    background: @blue;
+}
+
+.Category-Select .rsCategoryYellow span, #displayColour .rsCategoryYellow span, .Category-Select.catColour3, #displayColour.catColour3 {
+    background: @yellow;
+}
+
+.Category-Select .rsCategoryGreen span, #displayColour .rsCategoryGreen span, .Category-Select.catColour4, #displayColour.catColour4 {
+    background: @green;
+}
+
+.Category-Select .rsCategoryViolet span, #displayColour .rsCategoryViolet span, .Category-Select.catColour5, #displayColour.catColour5 {
+    background: @purple;
+}
+
+.RadScheduler .rsCategoryRed .rsAptContent, .RadScheduler .rsCategoryRed .rsAptMid, .RadScheduler .rsCategoryRed .rsResourceMarker {
+    border-color: @red;
+}
+
+.RadScheduler .rsCategoryDarkBlue .rsAptContent, .RadScheduler .rsCategoryDarkBlue .rsAptMid, .RadScheduler .rsCategoryDarkBlue .rsResourceMarker {
+    border-color: @blue;
+}
+
+.RadScheduler .rsCategoryYellow .rsAptContent, .RadScheduler .rsCategoryYellow .rsAptMid, .RadScheduler .rsCategoryYellow .rsResourceMarker {
+    border-color: @yellow;
+}
+
+.RadScheduler .rsCategoryGreen .rsAptContent, .RadScheduler .rsCategoryGreen .rsAptMid, .RadScheduler .rsCategoryGreen .rsResourceMarker {
+    border-color: @green;
+}
+
+.RadScheduler .rsCategoryViolet .rsAptContent, .RadScheduler .rsCategoryViolet .rsAptMid, .RadScheduler .rsCategoryViolet .rsResourceMarker {
+    border-color: @purple;
+}
+
+
+
+///-----------------------------------
+///NEU-16164
+///FORUM COLOURS TO USE BRAND COLOURS
+///-----------------------------------
+
+//make sure these colours are set in variables
+
+.i-forum-discussion,
+.IForumDiscussion, .type-discussion .iconlarge {
+    background-color: @blue;
+}
+
+.i-forum-idea,
+.IForumIdea, .type-idea .iconlarge {
+    background-color: @green;
+}
+
+.i-forum-question,
+.IForumQuestion, .type-question .iconlarge {
+    background-color: @orange;
+}
+
+
+//-----------------------------------
+//NEU-17034
+//APPLICATION BAR SHADOW - NO VARIABLE
+//-----------------------------------
+#app-ribbon {
+    box-shadow: @masthead-condensed-shadow;
+}
+
+
+//---------------------------
+//NEU-15619
+//OPTION TO STYLE INNER MENU HEADINGS
+//---------------------------
+#CollNavID .nav-list .nav-header span,
+.inner-menu .nav-list .nav-header a {
+    font-family: @base-heading-font-family;
+    font-size: 0.94rem;
+    font-weight: @base-heading-font-weight;
+    text-transform: @baseHeadingFontCase;
+}
+
+//---------------------------
+//NEU-00000
+//BACKGROUND COLOR SHOULD AFFECT ENTIRE BG
+//---------------------------
+#CollNavID.well .nav-list {
+    background: @inner-menu-item-background;
+}
+
+
+
+///------------------------------------
+///NEU-19228 JIRA NEEDED FOR ALL BOOTSTRAP FONT WEIGHT VALUES
+///BASE HEADINGS AND STRONG VALUES TO OVERWRITE BOOTSTRAP BOLDS
+///NEU-19786 H1-H3 STRONG FAMILY BUG
+///------------------------------------
+
+html {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: @base-heading-font-weight;
+
+        em {
+            font-weight: @base-heading-font-weight;
+            font-family: @base-heading-font-family;
+
+            strong {
+                font-weight: @bold-heading-font-weight;
+                font-family: @base-heading-font-family;
+            }
+        }
+
+        strong {
+            font-weight: @bold-heading-font-weight !important;
+            font-family: @base-heading-font-family !important;
+        }
+
+        a, a:visited, a:hover, a:focus, a:active {
+            font-weight: @base-heading-font-weight;
+        }
+    }
+
+    a, a:visited, a:hover, a:focus, a:active {
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: @base-heading-font-weight;
+
+            strong {
+                font-weight: @bold-heading-font-weight !important;
+            }
+        }
+    }
+
+    strong {
+        font-weight: @bold-font-weight !important;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: @bold-heading-font-weight !important;
+            font-family: @base-heading-font-family !important;
+        }
+
+        a, a:visited, a:hover, a:focus, a:active {
+            font-weight: @bold-font-weight !important;
+        }
+
+        em {
+            font-weight: @bold-heading-font-weight !important;
+            font-family: @base-heading-font-family !important;
+        }
+    }
+}
+
+//Other specific areas hard-set to bold
+.table th {
+    font-weight: @bold-font-weight;
+}
+
+
+
+///------------------------------------
+///NEU-19229 JIRA NEEDED FOR ALL BOOTSTRAP INPUT FONT FAMILY
+///------------------------------------
+html {
+    select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+        font-family: @base-font-family;
+    }
+}
+
+
+///-----------------------------------
+///DOCUMENT STYLES - FOR EXTRA SPECIFITY
+///-----------------------------------
+
+//Any Styles added here may need duplicating for use within .Widget_FreeText_Standard. Found in the underneath ///WIDGETS section: Commented ///HTML WIDGET STYLES
+//PAGE
+#document {
+    .container-title {
+        .span {
+            h1 {
+            }
+        }
+    }
+    //END OF H1
+    //ALL OTHER WITHIN DOC-INNER
+    #doc-content .doc-inner {
+        //NEU-15905
+        //---------
+        .summary-muted {
+            color: @base-text-color;
+            font-weight: @bold-font-weight;
+        }
+
+        h2, h3, h4, h5, h6 {
+        }
+
+        p {
+        }
+    }
+}
+
+///BLOCK EDITOR PAGES
+.foundry-preview,
+.template-preview-container,
+#page-viewer-root .foundry-scope,
+.foundry-scope #foundry-editor,
+.foundry-scope .snippet-list,
+.foundry-scope.page-container .block-container {
+
+    h1 {
+    }
+
+    h2, h3, h4, h5, h6 {
+    }
+
+    p {
+    }
+}
+
+
+//BLOG
+#blogs .content.is-primary {
+    h1 {
+    }
+
+    h2, h3, h4, h5, h6 {
+    }
+
+    p {
+    }
+}
+
+
+///-------------------------
+///NEU-15504
+///REDUCE AND STYLE RECOMMENDS NUMBERS
+///-------------------------
+ol.recommends > li:before,
+ol.recommended > li:before {
+    font-size: 2.6rem;
+    color: @secondary-brand;
+}
+
+
+///-------------------------
+///NEU-15733
+///COMPOSER PAGE EXISTS BUG
+///-------------------------
+
+html #composer #page-exists .peoplelisting .striped > li:nth-child(2n) {
+    background: @gray-lightest !important;
+}
+
+html #composer #page-exists .peoplelisting .striped > li:hover {
+    background: @gray-light !important;
+}
+
+
+///-----------------------------------
+///NEU-00000
+///ACCORDION STYLING - OVERWRITE BOOTSTRAP
+///------------------------------------
+.accordion-group .accordion-heading .accordion-toggle {
+    font-size: inherit !important;
+}
+
+//------------------------------------
+//NEU-15131
+//YOUR RECOMMENDS LONG STRING ISSUE
+//------------------------------------
+.most-popular a, .whats-new a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+
+///--------------------------
+///ZONES
+///--------------------------
+
+///-----------------------------------
+///NEU-15497
+///ZONE TITLE SIZE - VARIABLE NOT IN-SYNC
+///------------------------------------
+
+.homepage-zone > .container > h2 {
+  font-size: @base-zone-title-item-size !important;
+}
+
+
+///--------------------------
+///WIDGETS
+///--------------------------
+
+///-----------------------------------
+///NEU-15734
+///CORE PRODUCT FIX - REDUCE VERTICAL SPACING IN RESPONSIVE VIEW
+///------------------------------------
+
+@media (max-width: 979px) {
+    div#widgetBody, div.widgetBody {
+        height: 100% !important;
+        padding-bottom: 15px;
+    }
+}
+
+//------------------------------------
+//NEU-00000
+//Force all HTML widgets to have 100% height
+//---------------------------------
+.Widget_FreeText_Standard {
+    .row-fluid, .span12, .tabbable, fieldset {
+        height: 100%;
+    }
+}
+
+///------------------------------------
+///NEU-15379
+///All WIDGET HEADINGS AND SUB HEADINGS NEED TO FOLLOW CONSISTENT WEIGHT
+///------------------------------------
+//HTML Widget Inner H1-H6 Styles to be specified in a different section below
+
+ol.recommends > li:before, ol.recommended > li:before,
+ol.recommends > li ul.RecListItem .RecDetailsMain h4 a,
+.Widget_Content_SingleArticle ul.articlesingle li h4 small a,
+.Widget_Content_ArticleList ul.articlelist > li h4 small a,
+.Widget_Content_CleanList ul.CleanListEach li .content-widget-list-details-container h4 small a,
+.Widget_Content_Trends ul li.content-widget-item div:first-of-type a:not(.button),
+.Widget_Content_ShortenedList ul li.content-widget-item div:first-of-type a:not(.button),
+.Widget_Content_ListWithPreview .headline-item .headline-titleauth h3,
+.Widget_Content_CircleView .widgetBody .carousel .circle-view li .details h3 a,
+.Widget_Content_Carousel .carousel-caption h3,
+.Widget_Content_SingleHeroInline .widgetBody .carousel .single-hero-inline li h3 a,
+.Widget_Content_SingleHero .widgetBody .carousel .single-hero li h3 a,
+.Widget_Content_List ul li.content-widget-item a:first-of-type:not(.button),
+.widgetBody a h1,
+.widgetBody a h2,
+.widgetBody a h3,
+.widgetBody a h4,
+.widgetBody a h5,
+.widgetBody a h6,
+.gridster .widgetBody h1 a,
+.gridster .widgetBody h2 a,
+.gridster .widgetBody h3 a,
+.gridster .widgetBody h4 a,
+.gridster .widgetBody h5 a,
+.gridster .widgetBody h6 a,
+.gridster .widget-body h3,
+.widgetBody a.heading,
+.Widget_Content_layout1 .widget-body li:not(.is-headline) header h5,
+.Widget_Content_layout2 .widget-body li:not(.is-headline) header h5,
+.Widget_Content_layout3 .widget-body header h5,
+.Widget_Content_layout4 .widget-body li:not(.is-headline) header h5,
+.Widget_Content_layout5 .widget-body header a h5,
+.Widget_Content_layout6 ul.widget-list > li:first-child.is-headline .card-inline header h5,
+.Widget_Content_layout7 ul.widget-list > li.is-headline .card-inline header h5,
+.Widget_Content_layout8 ul.widget-list > li .card-inline header h5,
+.Widget_Content_layout9 ul.widget-list > li .card-inline header h5,
+.Widget_Content_layout10 ul.widget-list > li .card-inline header h5,
+.Widget_Content_layout11 .widget-body .carousel ul.widget-list > li.is-headline .card-inline .card-content header h5,
+.Widget_Content_layout12 .widget-body ul.widget-list > li.is-headline .card-inline .card-content header h5,
+.Widget_Content_layout13 ul.widget-list > li:first-child.is-headline .card-inline header h5,
+.Widget_Content_layout13 ul.widget-list > li:not(:first-child).is-headline .card-inline header h5,
+.Widget_Content_layout14 ul.widget-list > li .card-inline .card-content header h5,
+.Widget_Content_layout15 ul.widget-list > li .card-inline .card-content header h5 {
+    font-weight: @base-heading-font-weight !important;
+}
+
+///-----------------------------------
+///END OF HEADING WEIGHT CORRECTIONS
+///-----------------------------------
+
+///-----------------------------------
+///NEU-15379
+///HOVER LINK COLOR CORRECTIONS
+///-----------------------------------
+
+.Widget_Content_SingleHeroInline .widgetBody .carousel .single-hero-inline li h3:hover a,
+.Widget_Content_CleanList ul.CleanListEach li .content-widget-list-details-container h4:hover small a,
+.Widget_Content_SnippetView .widgetBody a .details:hover h3,
+.Widget_Content_InfoOverlay ul.info-overlay:hover h3,
+.Widget_Content_layout14 ul.widget-list > li .card-inline .button.read-more:hover,
+.Widget_Content_layout15 ul.widget-list > li .card-inline .button.read-more:hover,
+.Widget_Content_CircleView .widgetBody .carousel .circle-view li .details h3 a:hover,
+.Widget_Content_ListWithPreview .headline-item .headline-auth a:not(.btn):hover,
+.Widget_Content_ListWithPreview .headline-item .headline-titleauth h3:hover {
+    color: @link-color-hover !important;
+}
+
+///-----------------------------------
+///NEU-00000
+///LINK WEIGHT CORRECTIONS - Not inside H1-H6 or STRONG
+///-----------------------------------
+
+.label a, .badge a,
+.gridster ul.widget-list > li a:not(.button),
+.Widget_TimeLine_Standard [id*="timeline"] section .tl-eventcard a:not(.button):not(.btn):not(.post-edit):not(.post-delete),
+[id*="timeline"] section .tl-eventcard a:not(.button):not(.btn):not(.post-edit):not(.post-delete),
+[id*="stream"] section .tl-eventcard a:not(.button):not(.btn):not(.post-edit):not(.post-delete),
+.Widget_TimeLine_Standard li#TimeLineActionSummary li a,
+.Widget_Content_ListWithPreview ul.contentlist-preview li .auth a:not(.button),
+.Widget_Content_ListWithPreview .headline-item .headline-auth a:not(.btn),
+.Widget_Rewards_Standard .Rewards_list > li a:not(.button),
+.Widget_Content_TitleList .peoplelisting .striped > li a, .gridster .Widget_TopicsContent_TitleList .peoplelisting .striped > li a,
+.Widget_Content_List .content-widget-list-details-container div:nth-of-type(2) a,
+.Widget_Content_Trends .content-widget-list-details-container div:nth-of-type(2) a,
+.Widget_Content_List .content-widget-list-details-container div:nth-of-type(3) a,
+.Widget_Content_Trends .content-widget-list-details-container div:nth-of-type(3) a {
+    font-weight: @link-weight !important;
+}
+
+
+///-----------------------------------
+///NEU-15355
+///NO MANCHESTER HEADING CASE VARIABLE
+///------------------------------------
+
+html .widgetBody h2,
+html .widgetBody h3,
+html .widgetBody h4,
+html span#results-header
+{
+    text-transform: none !important;
+}
+
+//Widget Titles Only and W-Body H1's only
+//-------------------------------------
+html .widgetBody h1,
+html .gridster .widgetTitle h2, .gridster .widget-title h2 {
+    text-transform: @baseHeadingFontCase !important;
+}
+
+
+///-----------------------------------
+///HTML WIDGET STYLES - FOR EXTRA SPECIFITY
+///-----------------------------------
+
+//Any Styles added here may need to be consistent for use within pages, in the above section commented ///DOCUMENT STYLES
+
+.Widget_FreeText_Standard {
+    h1 {
+    }
+
+    h2, h3, h4, h5, h6 {
+    }
+
+    p {
+    }
+}
+
+
+///-------------------------------------
+///NEU-15620
+///WIDGET IMAGERY OVERLAYS
+///-------------------------------------
+
+//thumbnail overlay set to 0%
+//thumbnail headline set to 30%
+
+//No variable for Full Width Carousel 1 - is headline but should be 0%
+//---------------------------------
+.Widget_Content_DynamicCarousel1 .thumbnail-container:before,
+.Widget_TopicsContent_DynamicCarousel1 .thumbnail-container:before {
+    background-color: @widget-thumbnail-overlay-background !important;
+}
+
+//Full Width Carousel 3 - no overlay text on mobile layout
+//---------------------------------
+@media (min-width: 980px) {
+    .Widget_Content_DynamicCarousel3 .widget-body .dynamic-carousel .carousel ul.widget-list > li.item.is-headline article .row-fluid .thumbnail-container:before,
+    .Widget_TopicsContent_DynamicCarousel3 .widget-body .dynamic-carousel .carousel ul.widget-list > li.item.is-headline article .row-fluid .thumbnail-container:before {
+        background-color: @widget-thumbnail-overlay-background !important;
+    }
+}
+
+///-----------------------------------
+///SPECIFIC TYPES OF WIDGETS
+///-----------------------------------
+
+///-----------------------------------
+///NEU-15735
+///CORRECTIONS TO BACKGROUND WHERE MUTED TEXT IS HARD TO READ OVER MID-GREY VALUE
+///-----------------------------------
+
+.gridster .Widget_Content_SingleHero .widgetBody .carousel .single-hero,
+.gridster .Widget_TopicsContent_SingleHero .widgetBody .carousel .single-hero,
+.gridster .Widget_Content_SingleHeroInline .widgetBody .carousel .single-hero-inline, .gridster .Widget_TopicsContent_SingleHeroInline .widgetBody .carousel .single-hero-inline,
+.Widget_Content_SnippetView .widgetBody {
+    background-color: @gray-lightest !important;
+}
+
+///-----------------------------------
+///NEU-15737
+///TIMELINE - MANDATORY CARD HEADING COLOUR
+///-----------------------------------
+
+.Widget_TimeLine_Standard [id*="timeline"] section .tl-eventcard.tl-pushed.tl-mandatory .tl-mandatory-item .content a:not(.button):not(.btn):not(.post-edit):not(.post-delete),
+.Widget_TimeLine_Standard [id*="timeline"] section .tl-eventcard.tl-pushed.tl-mandatory .tl-mandatory-item .content p {
+    color: @alert !important;
+}
+
+///----------------------------------
+///NEU-15755
+///GEN2 FULL WIDGET 1 OVERRIDE-ONLY CUSTOMISATIONS
+///----------------------------------
+
+//--------------------------
+//NEU-15755
+//gradient background colour
+//--------------------------
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel {
+    background: -moz-linear-gradient(top, @widget-dynamic1-carousel-layout-background 0%, @widget-dynamic1-carousel-layout-background 39%, @widget-dynamic1-carousel-layout-background 39%, darken(@widget-dynamic1-carousel-layout-background,2%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, @widget-dynamic1-carousel-layout-background 0%,@widget-dynamic1-carousel-layout-background 39%,@widget-dynamic1-carousel-layout-background 39%,darken(@widget-dynamic1-carousel-layout-background,2%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, @widget-dynamic1-carousel-layout-background 0%,@widget-dynamic1-carousel-layout-background 39%,@widget-dynamic1-carousel-layout-background 39%,darken(@widget-dynamic1-carousel-layout-background,2%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@widget-dynamic1-carousel-layout-background', endColorstr='@widget-dynamic1-carousel-layout-background',GradientType=0 ); /* IE6-9 */
+}
+
+
+//-----------------------
+//NEU-15755
+//image radius bug
+//-----------------------
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .thumbnail-container,
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .thumbnail-container:before,
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .thumbnail-container > img {
+    border-radius: @widget-dynamic1-carousel-layout-thumbnail-radius;
+}
+
+//---------------------
+//NEU-15755
+//text must not be white on smaller devices - sits under the carousel
+//protects if @widget-dynamic1-carousel-layout-item is set to white
+//---------------------
+
+//firstly set muted text for all resolutions - as it is not syncing to variable
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .muted {
+    color: @widget-dynamic1-carousel-layout-item !important;
+
+    &:hover, &:active {
+        color: @widget-dynamic1-carousel-layout-item-hover !important;
+    }
+}
+
+@media (max-width:979px) {
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .card-content header h1,
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .card-content p,
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .muted {
+        color: @base-text-color !important;
+
+        &:hover, &:active {
+            color: @link-color-hover !important;
+        }
+    }
+}
+
+
+//----------------------
+//NEU-15736
+//optional transparent chevrons default and hover
+//----------------------
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron {
+    color: @widget-dynamic1-carousel-layout-item;
+    background: transparent;
+    border: 2px solid @widget-dynamic1-carousel-layout-item;
+
+    &:hover, &:active {
+        color: @widget-dynamic1-carousel-layout-item-hover;
+        background: transparent;
+        border: 2px solid @widget-dynamic1-carousel-layout-item-hover;
+
+        .icon {
+            color: @widget-dynamic1-carousel-layout-item-hover !important;
+        }
+    }
+}
+
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron .icon, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron .icon,
+.gridster .Widget_Content_DynamicCarousel1 .carousel-chevron .icon:not(.is-right), .gridster .Widget_Content_DynamicCarousel1 .widget-body a.carousel-chevron .icon:not(.is-right) {
+    color: @widget-dynamic1-carousel-layout-item;
+
+    &:hover, &:active {
+        color: @widget-dynamic1-carousel-layout-item-hover;
+    }
+}
+
+//---------------------------------
+//must stay white on mobile devices
+//---------------------------------
+@media (max-width:979px) {
+
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron {
+        color: @white;
+        background: transparent;
+        border: 2px solid @white;
+
+        &:hover, &:active {
+            color: @gray-lightest !important;
+            background: transparent;
+            border: 2px solid @gray-lightest !important;
+
+            .icon {
+                color: @gray-lightest !important;
+            }
+        }
+    }
+
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron .icon, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron .icon,
+    .gridster .Widget_Content_DynamicCarousel1 .icon, .gridster .Widget_Content_DynamicCarousel1 .widget-body a.carousel-chevron .icon {
+        color: @white;
+
+        &:hover, &:active {
+            color: @gray-lightest !important;
+        }
+    }
+}
+
+//----------------------
+//NEU-15755
+//chevrons need to be moved inward slightly on mobile
+//----------------------
+@media (max-width:979px) {
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron.is-left, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron.is-left {
+        margin-left: -7rem;
+    }
+
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron.is-right, .gridster .Widget_TopicsContent_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel .carousel-chevron.is-right {
+        margin-left: -4rem;
+    }
+}
+
+//-------------------------
+//NEU-15755
+//reduce heading and spacing on bigger devices
+//-------------------------
+@media (min-width:1201px) {
+    .gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list > li.item.is-headline .card-inline .card-content header h1 {
+        font-size: @widget-dynamic1-carousel-layout-item-heading-size; //reduced from @content-size-2
+        line-height: 1.3;
+        margin: 1.4rem 0 0.3rem;
+    }
+}
+
+//------------------------
+//NEU-15736
+//REMOVE GLOW ON CHEVRONS
+//-----------------------
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .carousel-chevron {
+    box-shadow: none;
+}
+
+
+///------------------------------------
+///END OF GEN2 FULL WIDGET 1
+///------------------------------------
+
+
+///----------------------------------
+///NEU-16215
+///GEN2 FULL WIDGET 3 OVERRIDE-ONLY CUSTOMISATIONS
+///----------------------------------
+
+//---------------------
+//NEU-16215
+//text must be white on smaller devices - sits over the image overlay
+//protects if @widget-dynamic3-carousel-layout-item is set to dark
+//this is the reverse scenario of FW Carousel1
+//---------------------
+@media (max-width:767px) {
+    .gridster .Widget_Content_DynamicCarousel3 .widget-body .dynamic-carousel .carousel ul.widget-list > li.item.is-headline article .card-inline .card-content, .gridster .Widget_TopicsContent_DynamicCarousel3 .widget-body .dynamic-carousel .carousel ul.widget-list > li.item.is-headline article .card-inline .card-content {
+        header h1, p, aside .timeago {
+            color: @white !important;
+
+            &:hover, &:active {
+                color: @gray-lightest !important;
+            }
+        }
+    }
+}
+
+//----------------------
+//NEU-16215
+//optional transparent chevrons default and hover
+//always white as sit over image in all resolutions
+//----------------------
+
+.gridster .Widget_Content_DynamicCarousel3 .carousel .carousel-chevron .icon, .gridster .Widget_TopicsContent_DynamicCarousel3 .carousel .carousel-chevron .icon {
+    color: @white !important;
+}
+
+.gridster .Widget_Content_DynamicCarousel3 .carousel .carousel-chevron, .gridster .Widget_TopicsContent_DynamicCarousel3 .carousel .carousel-chevron {
+    color: @white !important;
+    background: rgba(0,0,0,0.2) !important;
+    border: 2px solid @white !important;
+
+    &:hover, &:active {
+        color: @gray-lightest !important;
+        background: rgba(0,0,0,0.2) !important;
+        border: 2px solid @gray-lightest !important;
+
+        .icon {
+            color: @gray-lightest !important;
+        }
+    }
+}
+
+.gridster .Widget_Content_DynamicCarousel3 .carousel .carousel-chevron .icon, .gridster .Widget_TopicsContent_DynamicCarousel3 .carousel .carousel-chevron .icon {
+    color: @white !important;
+
+    &:hover, &:active {
+        color: @gray-lightest !important;
+    }
+}
+
+//-----------------------
+//NEU-00000
+//SHADOW ADDED ON INDICATORS FOR POOR CONTRAST
+//-----------------------
+.gridster {
+    .Widget_Content_DynamicCarousel1, .Widget_TopicsContent_DynamicCarousel1, .Widget_Content_DynamicCarousel2, .Widget_TopicsContent_DynamicCarousel2, .Widget_Content_DynamicCarousel3, .Widget_TopicsContent_DynamicCarousel3 {
+        .carousel .carousel-indicators li a {
+            box-shadow: 2px 3px 5px rgba(0,0,0,0.2)
+        }
+    }
+}
+
+
+///------------------------------------
+///NEU-15736
+///MEET THE TEAM CHEVRONS
+///------------------------------------
+
+.gridster .Widget_People_list_team .widget-controls .icon-container {
+    background-color: @secondary-brand;
+}
+
+.gridster .Widget_People_list_team .widget-controls .icon-container:hover {
+    background-color: darken(@secondary-brand,5%);
+}
+
+.gridster .Widget_People_list_team .widget-controls .icon .ii {
+    color: @white;
+}
+
+
+
+///---------------------------------
+///NEU-13523
+///NEU-12031
+///TIDY BOTH EVENTS WIDGET - LARGER AND SMALLER GRID WIDTHS
+///---------------------------------
+
+//ALL SIZES
+
+.gridster .Widget_Content_layout14, .Widget_TopicsContent_layout14,
+.gridster .Widget_Content_layout15, .Widget_TopicsContent_layout15 {
+
+    .widgetBody ul.widget-list > li {
+        background-color: @gray-lightest !important;
+        border-radius: @radius;
+        padding: 1rem 0.7rem;
+
+        aside {
+            text-align: center;
+
+            .day {
+                color: @primary-brand;
+            }
+        }
+    }
+
+    .widgetBody ul.widget-list > li:first-child {
+        padding: 1rem 0.7rem !important;
+        margin-top: 1rem;
+    }
+}
+
+
+//SMALLER SIZES
+
+.gridster .Widget_Content_layout14:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]), .gridster .Widget_TopicsContent_layout14:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]),
+.gridster .Widget_Content_layout15:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]), .gridster .Widget_TopicsContent_layout15:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]) {
+
+
+    .widgetBody ul.widget-list > li {
+        .card-inline {
+
+            aside {
+                padding: 0 1rem;
+
+                .day {
+                    color: @primary-brand;
+                    font-size: 2rem;
+                }
+
+                .month {
+                    font-size: 0.775rem;
+                    text-transform: uppercase;
+                    font-weight: 700
+                }
+            }
+
+            .card-content {
+                padding: 0 0rem 0 1.5rem;
+
+                header h5 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+
+                .button {
+                    padding: 0.4rem 1rem 0.4rem 0rem;
+                }
+            }
+
+            .button.read-more {
+                display: none;
+            }
+        }
+    }
+}
+
+//LAYOUT 14 ONLY
+//-----------------------------------
+
+//ALL SIZES
+
+html .gridster .Widget_Content_layout14, .gridster .Widget_TopicsContent_layout14 {
+    //grey divider border on default and hover
+    .widgetBody ul.widget-list > li:not(:last-child) .card-content,
+    .widgetBody ul.widget-list > li:hover:not(:last-child) .card-content,
+    .widgetBody ul.widget-list > li:focus:not(:last-child) .card-content,
+    .widgetBody ul.widget-list > li:focus:not(:last-child) .card-content {
+        border-left: 1.5px solid @gray-light;
+    }
+
+    .widgetBody ul.widget-list > li:last-child {
+        background-color: transparent !important;
+    }
+}
+
+//LAYOUT 15 ONLY
+//-------------------------------------
+
+//ALL SIZES
+
+.gridster .Widget_Content_layout15, .Widget_TopicsContent_layout15 {
+    .widgetBody ul.widget-list > li {
+        margin: 0;
+    }
+
+    .widgetBody li.view-all {
+        display: none;
+    }
+
+    .widgetBody ul .widget-list > li aside {
+        border-right: 2px solid @white;
+    }
+}
+
+//SMALLER SIZES
+
+.gridster .Widget_Content_layout15:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]), .gridster .Widget_TopicsContent_layout15:not([data-sizex="7"]):not([data-sizex="8"]):not([data-sizex="9"]):not([data-sizex="10"]):not([data-sizex="11"]):not([data-sizex="12"]) {
+    ul.widget-controls {
+        margin: 0 0 0.5rem;
+    }
+
+    .widgetBody ul.widget-list > li {
+        margin: 1rem 0;
+        padding: 0rem 0.7rem 0rem 0rem !important;
+
+        aside {
+            padding: 0 2rem !important;
+        }
+    }
+}
+
+//------------------------------------
+//NEU-00000
+//Showcase widget Invert - Invert showcase full widget colours
+//---------------------------------
+.Widget_Content_ShowcaseFull {
+    .widgetBody {
+        #showcasefull {
+            li {
+                &:before {
+                    opacity: 0;
+                }
+            }
+
+            .details {
+                h3, h4 {
+                    color: @showcaseText;
+
+                    span {
+                        background-color: @showcaseBG;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//---------------------------------
+//NEU-00000
+//Rewards widget - change link to appear as button
+//---------------------------------
+.Widget_Rewards_Standard .btn-link {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    padding: @base-button-padding-vertical @base-button-padding-horizontal;
+    background: @base-button-background;
+    border: 1px solid @base-button-border;
+    border-bottom-color: @base-button-border;
+    border-radius: @base-button-radius;
+    box-shadow: none;
+    color: @base-button-color;
+    font-size: 0.75rem;
+    line-height: @base-line-height;
+    text-shadow: none;
+    min-height: @base-button-height;
+    margin: 0.5rem 0;
+
+    .icon-gift {
+        display: none;
+    }
+}
+
+
+///------------------------------------
+///END OF SPECIFIC WIDGETS
+///------------------------------------
+
+///-----------------------------------
+///FURTHER DALLAS CORRECTIONS
+///-----------------------------------
+
+//------------------------------------
+//NEU-15869
+//OVERRIDE SHADOWS SET IN DALLAS
+//------------------------------------
+li.normal, li.edited {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+
+//------------------------------------
+//NEU-15869
+//SIDE MENU (Remove old Body Background)
+//------------------------------------
+#CollNavID img.SideMenuTopItemImage {
+    background: @body-background !important;
+}
+
+#blog .accordion {
+    background: @body-background;
+}
+
+ol.recommends > li {
+    background: @body-background;
+}
+
+
+//-------------------------------------
+//NEU-15870
+//SUCCESS (Remove Interact system Blue)
+//-------------------------------------
+.progress-cold .bar, .progress .bar-cold {
+    #gradient > .vertical(lighten(@secondary-brand,4%), @secondary-brand);
+}
+
+.progress-cold.progress-striped .bar, .progress-striped .bar-cold {
+    #gradient > .striped(@secondary-brand);
+}
+
+
+///------------------------------------
+///FOOTER
+///------------------------------------
+
+//------------------------------------
+//NEU-15904
+//NO VARIABLE FOR OPTION OF TOP FOOTER BORDER
+//-------------------------------------
+.site-footer {
+    border-top: 0px solid @footer-border-color;
+}
+
+
+//------------------------------------
+//NEU-15868
+//ICON, TEXT AND LINK COLOUR NEEDED BUG
+//-------------------------------------
+.site-footer .footer-container .breadcrumbs-container nav > ul li,
+.site-footer .footer-container .breadcrumbs-container nav > ul li .icon {
+    color: @footer-copy;
+}
+
+.site-footer .footer-container .breadcrumbs-container nav > ul li a {
+    color: @footer-link;
+}
+
+
+//------------------------------------
+//NEU-15868
+//BORDER COLOUR BUG
+//------------------------------------
+.footer-container > div:first-child {
+    border-bottom: 1px solid @footer-border-color;
+}
+
+//------------------------------------
+//NEU-15868
+//HOMEPAGE COG - NO VARIABLES
+//------------------------------------
+.page-edit .edit-btns a#EditLayout, .page-edit .edit-btns button#EditLayout {
+    background: @white;
+    color: @primary-brand;
+    border: 1px solid @primary-brand;
+}
+
+.page-edit .edit-btns a#EditLayout:hover, .page-edit .edit-btns button#EditLayout:hover, .page-edit .edit-btns a#EditLayout:active, .page-edit .edit-btns button#EditLayout:active {
+    background: @primary-brand;
+    border: 1px solid @primary-brand;
+    color: @white;
+}
+
+
+
+///-----------------------------------
+///VANILLA CONTENT SUPPORT
+///-----------------------------------
+
+//------------------------------------
+//Quick Links
+//------------------------------------
+.quick-links-hp {
+    li {
+        a {
+            &.has-subtext {
+                // Extend link
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    z-index: 3;
+                }
+            }
+        }
+
+        .link-subtext {
+            z-index: 1 !important;
+        }
+    }
+}
+
+
+//------------------------------------
+//Vanilla Zones
+//------------------------------------
+
+//---------------------------------
+//Selected Homepages
+//Remove gap to footer for feedback zones, bottom zones with colour
+//---------------------------------
+#zone-43, #zone-13 {
+    margin-bottom: -4rem;
+}
+
+
+//------------------------------------
+//Social Homepage
+//------------------------------------
+.social-banner {
+    background-color: @primary-brand;
+    width: 100%;
+    height: 220px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .container {
+        position: relative;
+    }
+
+    h2 {
+        color: @white;
+        position: absolute;
+        right: 0;
+        top: 80px;
+        font-size: @size-1;
+    }
+}
+
+.homepage-1013 .Widget_TimeLine_Standard {
+    background: white;
+    padding: 0.6rem 1rem;
+    margin: -140px 0 0 -13px;
+    border-radius: @radius-large;
+}
+// EOF
+
+// White Timeline background
+html.homepage-1014, html.homepage-1012, html.homepage-1022 {
+    .gridster .Widget_TimeLine_Standard [id*="timeline"] section .tl-eventcard {
+        background: white;
+    }
+}
+
+
+//------------------------------------
+//Retail Homepage
+//------------------------------------
+html.homepage-1014 {
+
+    section#zone-19 {
+        padding-top: 1.25rem;
+        padding-bottom: 1rem;
+    }
+
+    section#zone-17 {
+        padding-top: 0;
+    }
+}
+
+
+//------------------------------------
+//Homepage 3 - /home/1015 -
+//Change carousel widget layout - Layout 11
+// ---------------------------------
+html.homepage-1015 {
+    .gridster .Widget_Content_layout11, .gridster .Widget_TopicsContent_layout11 {
+
+        ul.widget-list li.is-headline.is-inverted a:before {
+            content: "";
+            width: 100%;
+            display: block;
+            height: 450%;
+            position: absolute;
+            top: -270px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            top: 260px;
+            left: 50%;
+            margin-left: -2.3rem;
+
+
+            li {
+                content: "";
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: @radius-large;
+                display: block;
+                background: @gray-light;
+
+                &.active {
+                    background: @primary-brand;
+                }
+            }
+        }
+
+        .carousel-chevron {
+            top: 115px;
+        }
+
+        article.card-inline {
+            background: transparent;
+
+            .thumbnail-container {
+                max-height: 235.2px;
+
+                &:before {
+                    display: none;
+                }
+            }
+
+            .card-content {
+                bottom: 0;
+                height: 100%;
+
+                aside {
+                    display: block !important;
+                    position: absolute;
+                    top: 255px;
+                    left: 0;
+                    max-width: 280px;
+
+                    li {
+                        color: @base-text-muted;
+                    }
+
+                    .is-author a {
+                        color: @link-color !important;
+
+                        &:hover, &:focus {
+                            color: @link-color-hover !important;
+                        }
+                    }
+                }
+
+                header {
+                    position: absolute;
+                    top: 269px;
+                    left: 0;
+                    max-width: 100%;
+                    width: 100%;
+
+                    a {
+                        h5 {
+                            color: @link-color;
+                            font-weight: @base-heading-font-weight;
+                            font-size: @size-5;
+                            overflow: visible;
+                            white-space: normal;
+                            margin: 1rem 0 0.5rem !important;
+                        }
+
+                        &:hover, &:focus {
+                            h5 {
+                                color: @link-color-hover;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: @base-text-color;
+                        text-overflow: ellipsis !important;
+                        white-space: nowrap !important;
+                    }
+                }
+
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+
+                    .icon, span {
+                        color: @base-text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    section#zone-33 {
+        padding: 0;
+        margin: -2rem 0;
+    }
+
+    .Widget_Polls_Standard .widgetTitle + .widgetBody .QuestionContainer {
+        height: ~"calc(100% - 1rem)" !important;
+    }
+}
+
+@media (max-width: 978px) {
+    html.homepage-1015 {
+        .gridster .Widget_Content_layout11 .widget-body .carousel ul.widget-list {
+            height: 25.5rem !important;
+        }
+
+        .gridster .Widget_Content_layout11 .widget-body .carousel ul.widget-list li.is-headline .card-inline .card-content {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 978px) {
+    html.homepage-1015 {
+        .gridster .Widget_Content_layout11 .carousel-indicators,
+        .gridster .Widget_TopicsContent_layout11 .carousel-indicators {
+            top: 340px;
+        }
+
+        .gridster .Widget_Content_layout11 .carousel-chevron, .gridster .Widget_TopicsContent_layout11 .carousel-chevron {
+            top: 150px;
+        }
+
+        .gridster .Widget_Content_layout11 .widget-body .carousel ul.widget-list {
+            height: 27rem !important;
+
+            li.is-headline .card-inline {
+                .thumbnail-container {
+                    max-height: 310px;
+                    height: 310px;
+                }
+
+
+                .card-content {
+                    bottom: 23px;
+
+
+                    header {
+                        bottom: -30px;
+                        top: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//------------------------------------
+//Homepage 5 /home/1019 - Menu highlight on discovery homepage
+//---------------------------------
+#quick-link-highlights {
+    margin: 0 !important;
+
+    li a {
+        display: block;
+        padding-bottom: 0.5rem;
+
+        &.active {
+            font-weight: @base-heading-font-weight;
+        }
+    }
+}
+
+//---------------------------------
+//Onboarding homepage - todo list
+//---------------------------------
+ul.list-todo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        color: @link-color;
+        font-weight: 400;
+        border-bottom: 1px solid @gray-lighter;
+        line-height: 1.5;
+        padding: 8px 0;
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+
+        &:hover {
+            color: @gray-dark;
+        }
+
+        &:before {
+            font-family: 'ii-custom-font-icons' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e9bb";
+            margin-right: 0.5rem;
+            font-size: 20px;
+        }
+
+        &.checked {
+            color: @gray-dark;
+
+            &:before {
+                content: "\e9cd" !important;
+            }
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+//---------------------------------
+//Leadership homepage /home/1021
+//---------------------------------
+html.homepage-1021 #interact-homepage-header {
+    background-color: @gray-lightest;
+}
+
+
+//---------------------------------
+//Homepage 6 home/1022 - search centric
+//---------------------------------
+@media (min-width: 980px) {
+    html.homepage-1022 {
+        .synopsis.intro {
+            background: @white !important;
+        }
+
+        .synopsis.intro .control.search-field.has-options .input.input.is-medium {
+            border-color: @gray;
+
+            &:hover, &:focus {
+                border-color: @gray-darker;
+            }
+        }
+
+        .search-field:before {
+            content: "How can we help you?";
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: @base-heading-font-weight;
+            position: absolute;
+            font-family: @base-heading-font-family;
+            z-index: 3;
+            top: -3.5rem;
+            text-align: center;
+            left: 0;
+            right: 0;
+        }
+
+        .synopsis.intro ul.searchreveal-quick-results,
+        .synopsis.intro ol.searchreveal-quick-results {
+            z-index: 3;
+        }
+
+        .synopsis.intro:after {
+            background-image: url(/utilities/assets/handler/asset.ashx?asset=250341&size=6);
+            content: "";
+            background-repeat: no-repeat;
+            display: block;
+            left: 50%;
+            width: 1010px;
+            top: 50px;
+            margin-left: -495px;
+            background-size: cover;
+            height: 250px;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .synopsis.intro .control.has-options {
+            position: relative;
+            z-index: 3;
+        }
+
+        .synopsis.intro .content-container {
+            max-width: 520px;
+            padding: 6.5rem 0 6.5rem;
+        }
+    }
+}
+
+
+///-----------------------------------
+///OTHER CUSTOMER SPECIFIC CONTENT SUPPORT
+///-----------------------------------
+
+///Widget Titles - Make italic
+.gridster .widgetTitle h2, .gridster .widget-title h2 { font-style: italic; }
+
+///Masthead - Force shadow always
+#header-container {
+       box-shadow: @masthead-condensed-shadow !important;
+}
+
+///Carousel - Add image BG
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel {
+    background: url(/utilities/assets/handler/asset.ashx?asset=250377&size=6) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+///Breadcrumbs in Footer
+nav.breadcrumbs { justify-content: left !important; }
+
+//Labels
+.label { border-radius: 0; font-weight: 500; }
+* { text-shadow: none !important; }
+
+//Carousel Image - Add borders
+.gridster .Widget_Content_DynamicCarousel1 .widget-body .dynamic-carousel .container .carousel ul.widget-list>li.item.is-headline .card-inline .thumbnail-container {
+    border-left: 6px solid @orange !important;
+    border-right: 6px solid @orange !important;
+}
+
+//Blog - Synopsis Buttons
+.has-overlay.is-inverted .synopsis.author .button:hover, .has-overlay.is-inverted .synopsis.author .button:focus, .has-overlay.is-inverted .synopsis.author .button:active { color: @white; }
+
+//Synopsis - Directory & Admin - Background
+#directory .synopsis.intro, .synopsis.intro.is-admin {
+    background: url(/utilities/assets/handler/asset.ashx?asset=250378&size=6) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    padding: 1.3rem 0 !important;
+}
+
+///Homepage 1011 - Beige zone BG
+#zone-5 {
+    background: url(/utilities/assets/handler/asset.ashx?asset=250380&size=6) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+///Homepage 1011 - Padding at bottom
+@media (min-width: 980px) {
+.homepage-1011 body { margin-bottom: 2rem; }
+}
+
+///Homepage - Add Zone title underlines
+.homepage-zone>.container>h2:after {
+    display: block;
+    background: @orange;
+    content: "";
+    height: 2px;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 48%;
+}
+
+///-------------------------------------------------
+///interact-intranet.atlassian.net/browse/PSC-1
+///HIDE ALL LIKE AND COMMENT
+///-------------------------------------------------
+
+/* ---------- */
+/* MANCHESTER */
+/* ---------- */
+
+/* WIDGETS */
+/* Manchester/Gen 2 - Hide like and comment from Widgets */
+ul.actions.is-inline.is-muted.is-small.list-unstyled {
+    display: none;
+}
+
+/* BLOG POSTS */
+/* Manchester/Gen 2 - Hide on Blog Posts */
+section#blog-post-comments {
+    display: none;
+}
+
+/* CATEGORY LIST - MANCHESTER & DALLAS */
+/* Hide Like & Comment Icons */
+#category-list #documents-results-container .ContentListDetails .ContentListItem span {
+    display: inherit;
+}
+#category-list #documents-results-container .ContentListItem span {
+    display: none;
+}
+
+/* PAGES */
+/* Manchester/Gen 2 - Hide on Pages */
+#doc-content section#statusSubmit {
+    display: none;
+}
+#doc-content [id*="timeline"] {
+    background: none;
+}
+
+/* BLOCK EDITOR COMMENT BOX */
+p.comments-count, .foundry-comment-box {
+    display: none;
+}
+/*BE Pages Like*/
+.floating-social-panel span:nth-child(2) {
+    display: none!important;
+}
+
+/* CALENDAR */
+/* Hide Events Comments*/
+#calendar.single .event-single {
+    visibility: hidden;
+}
+/* Hide Comments from Events */
+#calendar.single .calendar-comments-container {
+    display: none;
+}
+/*Hide buttons from Events*/
+#calendar .likeshare #btnShare, #calendar .likeshare #btnLike  {
+    display: none;
+}
+
+/* GALLERY */
+/* Manchester/Gen 2 - Hide Likes & Comments from Gallery page  */
+#gallery-main .social-controls a#btnLike {
+    display: none;
+}
+#gallery-main section#timeline.slides-timeline #statusSubmit .status-container {
+    display: none;
+}
+#gallery [id^="description-"] ul+ul {
+    display: none;
+}
+#gallery [id^="description-"] ul {
+    padding: 0 0 0.5rem 0;
+}
+
+/* FORUMS */
+/* Hide likes from Post(s) list and Post(s) Page Comments */
+a.like-post {
+    display: none;
+}
+#forums.forum [id*="stream"] section .tl-eventcard .social-tools .social-2 li:nth-child(2) {
+    display: none;
+}
+
+/* SEARCH RESULTS */
+/* Hide Likes From Search Results Page*/
+#Search #SearchResults .entry ul.extra-information [class^="icon-"], 
+#Searched #SearchResults .entry ul.extra-information [class^="icon-"], 
+#Search #SearchResults .entry ul.extra-information [class*=" icon-"], 
+#Searched #SearchResults .entry ul.extra-information [class*=" icon-"] 
+{
+    display: none;
+}
+#SearchResults .pull-right
+{
+    display: none;
+}
+
+
+/* FORUMS */
+/* Hide likes from Post(s) list and Post(s) Page Comments */
+#TimeLineActionSummary > ul.unstyled.pull-left.tools > li.social-2 > ul > li:nth-child(2) {
+    display: none;
+}

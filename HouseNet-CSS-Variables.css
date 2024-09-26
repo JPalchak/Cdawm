@@ -1,0 +1,1461 @@
+// Colours
+// -----------------------
+
+@primary-brand: @red;
+@secondary-brand: @orange;
+@tertiary-brand: @orange;
+
+//If any hex values below are modified for a theme, a similar lightness must be chosen and the contrast checked
+
+// Monochrome
+@black: #000;
+@gray-darker: #000;
+@gray-dark: #222;
+@gray: #656976;
+@gray-light: #F6F1E6;
+@gray-lighter: #F6F1E6;
+@gray-lightest: #f2f2f2;
+@white: #fff;
+
+// Primary
+@red: #891F1F;
+@green: #007A53;
+@blue: #005B8F;
+@orange: #AC7644;
+@yellow: #DCCCA2;
+@purple: #7858A5;
+
+// Variants
+@red-light: #cd1b1b;
+@red-dark: #891F1E;
+
+@green-light: #5C868D;
+@green-dark: darken(@green, 5%);
+
+@blue-light: #62B5E5;
+@blue-dark: #133652;
+
+@orange-light: lighten(@orange, 5%);
+@orange-dark: darken(@orange, 10%);
+
+@yellow-light: lighten(@yellow, 5%);
+@yellow-dark: darken(@yellow, 5%);
+
+@purple-light: lighten(@purple, 5%);
+@purple-dark: darken(@purple, 5%);
+
+
+// Typography
+// -----------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+// Font declarations
+// -----------------------
+@base-font-weight: 300;
+@bold-font-weight: 600;
+@font-family: 'Roboto', sans-serif;
+@font-family-websafe: @font-family;
+@base-font-family: @font-family;
+@base-line-height: 1.5;
+@small-line-height: 1;
+@base-font-size: 0.875rem;
+@base-text-color: @gray-dark;
+@base-text-muted: @gray;
+
+@base-heading-font-weight: 400;
+@bold-heading-font-weight: 600;
+@base-heading-font-family: 'Libre Baskerville', serif;
+@base-heading-color: @orange;
+
+//if using unique font names for instead of the weights
+//align all font weights to 400 and change these two values accordingly
+//these would then need to be added to any overrides that state @bold-font-weight or @bold-heading-font-weight
+//
+@bold-font-family: @font-family;
+@bold-heading-font-family: @base-heading-font-family;
+
+// NEU-15355
+// -----------------------
+@baseHeadingFontCase: none;
+
+// Links
+// -----------------------
+@link-color: @blue;
+@link-color-hover: @blue-dark;
+@link-decoration: none;
+@link-decoration-hover: none;
+
+@link-weight: normal;
+@link-weight-hover: @link-weight;
+
+// Core Values
+// -----------------------
+@base-padding: 1rem;
+@base-margin: 1rem;
+
+@radius: 0.3rem;
+@radius-small: 0.2rem;
+@radius-large: 0.5rem;
+@radius-rounded: 290486px;
+
+// Core Typography
+// -----------------------
+@size-1: 2.5rem;
+@size-2: 2rem;
+@size-3: 1.75rem;
+@size-4: 1.5rem;
+@size-5: 1.25rem;
+@size-6: 1rem;
+@size-7: @base-font-size;
+@size-8: 0.75rem;
+@size-9: 0.65rem;
+
+@h1-size: @size-2 * 0.86;
+@h2-size: @size-3 * 0.86;
+@h3-size: @size-4 * 0.86;
+@h4-size: @size-5 * 0.89;
+@h5-size: @size-6 * 0.93;
+@h6-size: @size-7;
+
+@hr-margin: @base-margin 0;
+@hr-background: @gray-light;
+
+// Content
+// Increased sizes for content areas (page, blog etc)
+// Based on Typography units
+@content-multiplier: 1;
+
+@content-size-0: 5rem;
+@content-size-1: (@size-1 * @content-multiplier);
+@content-size-2: (@size-2 * @content-multiplier);
+@content-size-3: (@size-3 * @content-multiplier);
+@content-size-4: (@size-4 * @content-multiplier);
+@content-size-5: (@size-5 * @content-multiplier);
+@content-size-6: (@size-6 * @content-multiplier);
+@content-size-7: @content-base-font-size;
+@content-size-8: (@size-8 * @content-multiplier);
+@content-size-9: (@size-9 * @content-multiplier);
+
+@content-base-font-size: (@base-font-size * @content-multiplier);
+
+@content-h1-size: @content-size-2;
+@content-h1-margin-bottom: 2rem;
+@content-h1-margin-top: 1rem;
+
+@content-h2-size: @content-size-3;
+@content-h2-margin-bottom: 1.5714rem;
+@content-h2-margin-top: 1.1428rem;
+
+@content-h3-size: @content-size-4;
+@content-h3-margin-bottom: 1.3rem;
+@content-h3-margin-top: 1rem;
+
+@content-h4-size: @content-size-5;
+@content-h4-margin-bottom: 1rem;
+@content-h4-margin-top: 0.8rem;
+
+@content-h5-size: @content-size-6;
+@content-h5-margin-bottom: 0.8rem;
+@content-h5-margin-top: 0.7rem;
+
+@content-h6-size: @content-size-7;
+@content-h6-margin-bottom: 0.6rem;
+@content-h6-margin-top: 0.65rem;
+
+
+// Body
+// -----------------------
+@body-background: @white;
+@body-background-mobile: @white;
+@body-background-position: 0 0;
+@body-background-repaeat: no-repeat;
+@body-background-size: contain;
+@body-background-img: "/Content/default/images/bg.png";
+
+
+// Old UI Resets
+// -----------------------
+@bodyBackground: @body-background;
+@grayDarker: @gray-darker;
+@grayDark: @gray-dark;
+@grayLight: @gray-light;
+@grayLighter: @gray-lighter;
+@muted: @base-text-muted;
+@primarycustom: @primary-brand;
+@secondcusom: @secondary-brand;
+@linkColor: @link-color;
+@linkColorHover: @link-color-hover;
+
+
+// Masthead
+// -----------------------
+@masthead-background: @white;
+@masthead-condensed-background: @white;
+@masthead-condensed-height: 4.75rem;
+@masthead-condensed-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+@masthead-nav-link-item: @white;
+@masthead-nav-link-background: transparent;
+@masthead-nav-link-item-active: @yellow;
+@masthead-nav-link-background-active: transparent;
+
+@masthead-background-mobile: @masthead-background;
+@masthead-nav-mobile-background: @primary-brand;
+
+@masthead-background-img: "/Content/default/images/bg.png";
+
+// Status
+// -----------------------
+@main-search-filters-margin: 0;
+
+// Icons
+@status-icon-color: @base-text-color;
+@status-icon-color-hover: @link-color;
+
+@status-notifications-div: fade(@gray,25%);
+@status-notifications-div-width: 1px;
+@status-notifications-alert: @red; 
+
+// Brand
+// -----------------------
+@brand-position: left;
+@brand-padding: 0 @base-padding 0 0;
+@brand-width: 210px;
+@brand-condensed-max-height: 95px;
+
+// User
+// -----------------------
+@status-username: @nav-bar-item-color;
+@status-username-hover: @nav-bar-item-hover-color;
+@status-impersonated-item: @alert-info;
+
+// Synopsis
+// -----------------------
+@synopsis-padding-top: 1rem;
+@synopsis-padding-bottom: 1rem;
+
+@synopsis-intro-border-bottom: 0px;
+@synopsis-intro-border-top: 0px;
+@synopsis-intro-background: @red;
+
+//Synopsis Heading
+@synopsis-heading-color: @white;
+@synopsis-support-color: @synopsis-heading-color;
+
+@synopsis-intro-heading-position: center;
+
+//Synopis Admin
+@synopsis-heading-admin-color: @synopsis-heading-color;
+@synopsis-support-admin-color: @synopsis-heading-admin-color;
+
+// Input & button
+@synopsis-icon-color: @synopsis-heading-color;
+@synopsis-icon-hover-color: @white;
+@synopsis-input-color: @gray-dark;
+@synopsis-input-background: @white;
+
+// Input Border
+@synopsis-button-border: lighten(@synopsis-input-background,15%);
+@synopsis-button-border-hover: lighten(@synopsis-input-background,22%);
+@synopsis-actions-border: 1px solid @synopsis-button-border;
+
+// Synopsis Author
+@synopsis-author-border-bottom: 1px solid lighten(@synopsis-intro-background,5%);
+@synopsis-author-border-top: none;
+@synopsis-author-background: @synopsis-intro-background;
+@synopsis-author-item: @synopsis-heading-color;
+@synopsis-author-item-hover: @synopsis-icon-hover-color;
+
+// Tabs
+// -----------------------
+@tabs-active-item: @link-color;
+@tabs-active-border-bottom: 2px solid @link-color;
+
+// Nav-bar
+// -----------------------
+@nav-bar-font-size: 0.82rem;
+@nav-bar-item-color: @gray-dark;
+@nav-bar-item-hover-color: @link-color;
+@nav-bar-item-active-color: @link-color;
+@nav-bar-item-hover-background-color: @masthead-nav-link-background-active;
+
+@nav-bar-megamenu-background: @primary-brand;
+@nav-bar-megamenu-item-color: @white;
+@nav-bar-megamenu-item-hover-color: @yellow;
+@nav-bar-divider-background-color: lighten(@nav-bar-megamenu-background,8%);
+@nav-bar-megamenu-border-left: 1px solid fade(@yellow,30%);
+@nav-bar-megamenu-shadow: 0 7px 10px 0 rgba(0,0,0,0.10);
+
+@nav-bar-dropdown-heading: @white;
+@nav-bar-dropdown-background: @nav-bar-megamenu-background;
+@nav-bar-dropdown-item-color: @white;
+@nav-bar-dropdown-item-background-color: @nav-bar-dropdown-background;
+@nav-bar-dropdown-item-hover-color: @yellow;
+@nav-bar-dropdown-item-hover-background-color: fade(@white,0%);
+@nav-bar-dropdown-item-active-color: @yellow;
+@nav-bar-dropdown-item-active-background-color: fade(@white,0%);
+@nav-bar-dropdown-box-shadow: 0 5px 10px 0 fade(@gray,20%);
+@nav-bar-divider-background-color: @primary-brand;
+
+@nav-bar-item-padding-vertical: 1rem;
+@nav-bar-item-padding-horizontal: 1rem;
+@nav-bar-condensed-item-padding-vertical: 1rem;
+@nav-bar-condensed-item-padding-horizontal: 1rem;
+
+@nav-bar-condensed-nav-direction: @nav-bar-position;
+@nav-bar-position: right;
+
+
+// Nav-bar On Mobile
+// -----------------------
+@nav-bar-mobile-background: @primary-brand;
+@nav-bar-mobile-item: @white;
+@nav-bar-mobile-header: @white;
+
+
+// Inner-menu -- Left hand menu
+// -----------------------
+@inner-menu-header-item: @black;
+@inner-menu-header-background: @body-background;
+@inner-menu-header-item-hover: @link-color;
+@inner-menu-header-background-hover: @body-background;
+
+@inner-menu-header-padding-vertical: .6rem;
+@inner-menu-header-padding-horizontal: .6rem;
+@inner-menu-collapse-padding-vertical: .6rem;
+@inner-menu-collapse-padding-horizontal: .6rem;
+@inner-menu-item-padding-vertical: .3rem;
+@inner-menu-item-padding-horizontal: .6rem;
+
+@inner-menu-collapse-border: 1.5px solid fade(@yellow,60%);
+@inner-menu-collapse-border-open: 1.5px solid fade(@yellow,60%);
+
+@inner-menu-item: @base-text-color;
+@inner-menu-item-hover: @link-color-hover;
+@inner-menu-item-background: @body-background;
+@inner-menu-item-background-hover: @body-background;
+
+// for current page link highlighting
+@inner-menu-item-current-link-color: @inner-menu-item-hover;
+@inner-menu-item-current-link-font-weight: @bold-font-weight;
+
+
+// Panel-filters
+// -----------------------
+@panel-filers-background: @primary-brand;
+@panel-filters-heading-color: @white;
+@panel-filters-item-color: @white;
+@panel-filters-item-hover-color: @white;
+@panel-filters-item-active-color: @white;
+@panel-filters-item-active-background-start: lighten(@panel-filers-background,6%);
+@panel-filters-item-active-background-end: transparent;
+@panel-filters-item-background: @panel-filers-background;
+@panel-filters-item-hover-background: lighten(@panel-filters-item-background,6%);
+
+@panel-item-close: @white;
+@panel-item-close-background: rgba(0, 0, 0, .7);
+@panel-item-close-border-radius: @radius-large;
+
+// Panels
+@panel-background: @body-background;
+@panel-overlay: rgba(0, 0, 0, 0.6);
+
+
+// Applications Bar
+// ----------------
+@app-ribbon-background: #133652;
+@app-ribbon-item: @white;
+@app-ribbon-item-hover: @white;
+@app-ribbon-item-background: @app-ribbon-background;
+@app-ribbon-item-background-hover: rgba(255,255,255,0.07);
+
+// Wells
+// ----------------
+@well-radius: @radius-large;
+@well-size: @base-padding;
+@well-size-is-small: (@base-padding / 1.5);
+@well-size-is-large: (@base-padding * 2);
+@well-background: @gray-lighter;
+@well-border: 1px solid @gray-lighter;
+
+// Accordion
+// ----------------
+@accordion-background: transparent;
+@accordion-heading-item: @link-color;
+@accordion-heading-item-hover: @link-color-hover;
+@accordion-heading-item-size: @content-h3-size;
+@accordion-border: @hr-background;
+
+
+// Alerts
+// ----------------------
+@alert: darken(@red,14%);
+@alert-card: fade(@alert,7%);
+
+@alert-info: @primary-brand;
+@alert-complete: @green;
+@alert-warning: @red-light;
+
+@alert-info-card: fade(@alert-info,7%);
+@alert-complete-card: fade(@alert-complete,7%);
+@alert-warning-card: fade(@alert-warning,7%);
+
+.alert-update:after {
+    border-bottom: 7px solid @primary-brand;
+}
+
+.alert-update a:hover {
+    color: @white;
+}
+
+@input-background: @white;
+@infoBackground: fade(@primary-brand, 7%);
+@infoText: @primary-brand;
+
+@card-rewards-color: @panel-rewards-solid-background-color;
+@card-rewards-color-light: @panel-rewards-color;
+
+
+// Rewards
+// ----------------
+@panel-rewards-color: @tertiary-brand;
+@panel-rewards-background-color: @panel-background;
+@panel-rewards-solid-background-color: fade(@panel-rewards-color,8%);
+@panel-rewards-border-color: @panel-rewards-color;
+@panel-rewards-background-image: "/public/imgs/rewards_bg.png";
+@panel-rewards-radius: @radius-large;
+@panel-rewards-img-radius: @radius-rounded;
+
+@panel-rewards-link-color: @panel-rewards-color;
+@panel-rewards-link-color-hover: @link-color-hover;
+
+
+// Main Content - Container
+// -----------------------
+@main-content-container-background: @white;
+@main-content-container-padding: 0;
+@main-content-container-margin-top: 0;
+@main-content-container-margin-bottom: 0;
+@main-content-container-radius: 0;
+
+// Zones
+// ----------------------
+@base-zone-background: @body-background;
+@base-zone-heading-item: @widget-body-color;
+@base-zone-padding: 2rem 0;
+@base-zone-margin: 0;
+@base-zone-title-item: @widget-title-color;
+@base-zone-title-item-size: 1.7rem;
+
+// Buttons
+// ----------------------
+@base-button-padding-horizontal: 1rem;
+@base-button-padding-vertical: 0.4rem;
+@base-button-height: 1.2rem;
+@base-button-radius: 4px;
+
+@base-button-background: @white;
+@base-button-border: @gray-dark;
+@base-button-color: @gray-dark;
+
+@base-button-solid-background: @gray-dark;
+@base-button-solid-border: 1px solid @gray-dark;
+@base-button-solid-item: @white;
+
+@base-button-disabled-background: @base-button-background;
+@base-button-disabled-item: @base-text-muted;
+@base-button-disabled-solid-background: @gray-lighter;
+
+// Give button
+@button-rewards-give-item: @panel-rewards-color;
+@button-rewards-give-border: @panel-rewards-color;
+@button-rewards-give-solid-background: @panel-rewards-color;
+@button-rewards-give-solid-border: @panel-rewards-color;
+
+// Spend button
+@button-rewards-spend-item: @link-color;
+@button-rewards-spend-border: @link-color;
+@button-rewards-spend-solid-background: @link-color;
+@button-rewards-spend-solid-border: @link-color;
+
+// States
+// ---------
+// Primary
+@button-primary-solid-background: @primary-brand;
+@button-primary-solid-border: 1px solid @primary-brand;
+@button-primary-solid-item: @white;
+
+@button-primary-background: @white;
+@button-primary-border: 1px solid @primary-brand;
+@button-primary-item: @primary-brand;
+
+// Info
+@button-info-solid-background: @primary-brand;
+@button-info-solid-border: 1px solid @primary-brand;
+@button-info-solid-item: @white;
+
+@button-info-background: @white;
+@button-info-border: 1px solid @primary-brand;
+@button-info-item: @primary-brand;
+
+// Warning
+@button-warning-solid-background: @alert-warning;
+@button-warning-solid-border: 1px solid @alert-warning;
+@button-warning-solid-item: @white;
+
+@button-warning-background: @white;
+@button-warning-border: 1px solid @alert-warning;
+@button-warning-item: @alert-warning;
+
+// Error
+@button-error-solid-background: @alert;
+@button-error-solid-border: 1px solid @alert;
+@button-error-solid-item: @white;
+
+@button-error-background: @white;
+@button-error-border: 1px solid @alert;
+@button-error-item: @alert;
+
+// Complete
+@button-complete-solid-background: @alert-complete;
+@button-complete-solid-border: 1px solid @alert-complete;
+@button-complete-solid-item: @white;
+
+@button-complete-background: @white;
+@button-complete-border: 1px solid @alert-complete;
+@button-complete-item: @alert-complete;
+
+// Synopsis (For use within the synopsis area)
+@button-synopsis-solid-background: @white;
+@button-synopsis-solid-border: 1px solid @white;
+@button-synopsis-solid-item: @base-text-color;
+
+@button-synopsis-background: @link-color;
+@button-synopsis-border: 1px solid @link-color;
+@button-synopsis-item: @white;
+
+
+// Widgets
+// ----------------------
+@widget-body-color: @base-text-color;
+@widget-icon-color: @base-text-muted;
+@widget-list-item: @gray-dark;
+@widget-list-heading-item: @gray-dark;
+@widget-list-item-hover: @link-color;
+@widget-list-heading-item-hover: @link-color;
+
+@widget-title-font-family: @base-heading-font-family;
+@widget-title-size: 1.3rem;
+@widget-title-background: transparent;
+@widget-title-color: @orange;
+@widget-title-border: none;
+@widget-title-weight: @base-heading-font-weight;
+@widget-title-transform: none;
+@widget-title-border: 0px solid @gray-light;
+
+// General Headings
+@widget-title-padding: 0;
+@widget-title-margin: 0;
+@widgetNormalBackground: @body-background;
+
+// Individual uses
+@widget-title-padding-top: @base-padding;
+@widget-title-padding-bottom: @base-padding;
+// Body offset - title height
+@widget-body-withtitle-height: 4.6rem;
+
+// Full Width Dynamic Layout 1
+@widget-dynamic1-carousel-layout-item: @white;
+@widget-dynamic1-carousel-layout-item-hover: @orange;
+@widget-dynamic1-carousel-layout-background: @primary-brand;
+
+@widget-dynamic1-carousel-layout-item-heading-size: 2.15rem;
+@widget-dynamic1-carousel-layout-thumbnail-radius: 0;
+
+// this is actually the default state of the button 62.4
+@widget-dynamic1-carousel-layout-button-item-hover: @white;
+@widget-dynamic1-carousel-layout-button-border-hover: 1px solid @orange;
+@widget-dynamic1-carousel-layout-button-background-hover: @orange;
+
+// this is actually the hover state of the button 62.4
+@widget-dynamic1-carousel-layout-button: @orange;
+@widget-dynamic1-carousel-layout-button-border: 1px solid @orange;
+@widget-dynamic1-carousel-layout-button-background: @white;
+
+// Full Width Dynamic Layout 3
+@widget-dynamic3-carousel-layout-background: @widget-dynamic1-carousel-layout-background;
+@widget-dynamic3-carousel-layout-image-overlay: @widget-thumbnail-overlay-headline-background;
+@widget-dynamic3-carousel-layout-item: @widget-dynamic1-carousel-layout-item;
+@widget-dynamic3-carousel-layout-item-hover: darken(@widget-dynamic3-carousel-layout-item,6%);
+@widget-dynamic3-carousel-layout-item-heading-size: @content-size-2;
+@widget-dynamic3-carousel-layout-item-heading-weight: @base-heading-font-weight;
+@widget-dynamic3-carousel-layout-item-size: @content-base-font-size;
+@widget-dynamic3-carousel-layout-button: @widget-dynamic3-carousel-layout-item;
+@widget-dynamic3-carousel-layout-button-border: 1px solid @widget-dynamic3-carousel-layout-item;
+@widget-dynamic3-carousel-layout-button-background: transparent;
+@widget-dynamic3-carousel-layout-button-hover: @widget-dynamic1-carousel-layout-button-item-hover;
+@widget-dynamic3-carousel-layout-button-border-hover: 1px solid @widget-dynamic1-carousel-layout-button-border-hover;
+@widget-dynamic3-carousel-layout-button-background-hover: @widget-dynamic1-carousel-layout-button-background-hover;
+
+// Full Width Dynamic Layout 4
+@widget-dynamic4-carousel-layout-background: @gray-lightest;
+
+// gen1 showcase
+@g1-widget-overlay-background-inverted: @secondary-brand;
+// gen 1 hover item
+@widgetContentKeyItem: fade(@primary-brand,10%);
+
+
+@widget-thumbnail-overlay-background: fade(@black,0%);
+@widget-thumbnail-overlay-headline-background: fade(@black,30%);
+
+
+// Breadcrumbs
+// ----------------------
+// Header Breadcrumbs
+@header-breadcrumb-background: @gray-lightest;
+@header-breadcrumb-border-bottom: 0px;
+@header-breadcrumb-font-family: @base-font-family;
+@header-breadcrumb-active-weight: normal;
+@header-breadcrumb-active-style: italic;
+@header-breadcrumb-active-item: @gray-dark;
+@header-breadcrumb-title-color: @gray-dark;
+@header-breadcrumb-color: @blue;
+@header-breadcrumb-hover: @link-color-hover;
+@header-breadcrumb-margin: 0;
+@header-breadcrumb-padding: 0.6rem 0;
+@header-breadcrumb-separator-color: @header-breadcrumb-color;
+
+
+// Footer Breadcrumbs
+@footer-breadcrumb-active-weight: none;
+@footer-breadcrumb-active-style: none;
+@footer-breadcrumb-color: @footer-copy;
+@footer-breadcrumb-hover: @footer-link-hover;
+@footer-breadcrumb-current-location-color: @footer-copy;
+
+// Body
+// ----------------------
+@body-min-height: 12rem;
+
+
+// Footer
+// ----------------------
+@footer-min-height: 6rem;
+@body-footer-offset: 9rem;
+@footer-breadcrumb-img-height: 35px;
+
+@footer-background: @gray-lightest;
+@footer-background-mobile: @footer-background;
+
+@footer-breadcrumb-font-family: @base-font-family;
+@footer-copy: @base-text-color;
+@footer-beadcrumb-color: @base-text-color;
+@footer-link: @link-color;
+@footer-link-hover: @link-color-hover;
+@footer-social-icon-item: @gray-dark;
+@footer-social-icon-item-hover: @link-color-hover;
+
+@footer-copy-mobile: @footer-copy;
+@footer-beadcrumb-color-mobile: @footer-beadcrumb-color;
+@footer-link-mobile: @footer-link;
+@footer-social-icon-item-mobile: @footer-social-icon-item;
+
+@footer-back-to-top-item: @white;
+@footer-back-to-top-item-hover: fade(@white,80%);
+@footer-back-to-top-background: @red;
+@footer-border-color: darken(@footer-background,7%);
+
+@footer-back-to-top-item-mobile: @footer-back-to-top-item;
+@footer-back-to-top-item-hover-mobile: @footer-back-to-top-item-hover;
+@footer-back-to-top-background-mobile: @footer-back-to-top-background;
+@footer-border-color-mobile: @footer-border-color;
+@footer-back-to-top-radius: @radius-rounded;
+
+
+// -----------------------
+// VANILLA CONTENT SUPPORT
+// -----------------------
+
+// Category and homepage banner styles
+// ---------------------------------
+.category-banner {
+    background: @red-dark;
+    background: url(/utilities/assets/handler/asset.ashx?asset=250379&size=6) @red-dark !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    background-size: contain !important;
+    padding: 1.5rem 2rem;
+    border-left: 6px solid @orange;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    h1, p, span {
+        color: @white !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+// Quick Links
+// ---------------------------------
+@media (max-width:979px) {
+    .quick-links-hp {
+        flex-direction: column;
+
+        &.l5 li, &.l4 li, &.l3 li, &.l2 li {
+            width: 100% !important;
+            margin: 0 0 0.2rem;
+        }
+
+        &.row-of-squares {
+            li {
+                width: 100%;
+                margin: 0 0 0.3rem !important;
+
+                &:first-child {
+                    margin: 0 0 0.3rem !important;
+                }
+
+                &:last-child {
+                    margin: 0rem !important;
+                }
+            }
+        }
+
+        .quick-links-hp li a.has-icon.has-subtext {
+            padding: 1.1rem 1rem 2rem 3.35rem !important;
+
+            + .link-subtext {
+                margin: -2rem 1rem 1rem 1.65rem !important;
+                padding: 0 1rem 0 1.85rem !important;
+            }
+        }
+
+        .quick-links-hp li a.has-subtext:not(.has-icon) {
+            padding: 1.1rem 1rem 2rem 1.6rem !important;
+        }
+
+        .link-subtext {
+            margin: -2.2rem 0 0.8rem !important;
+        }
+    }
+}
+//Small Desktop
+@media (max-width:1200px) {
+    .quick-links-hp {
+        &.is-single, &.is-square {
+            li {
+                a {
+                    i.fa {
+                        font-size: 3rem !important;
+                        margin-bottom: 0.7rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//All resolutions
+.quick-links-hp {
+    display: flex;
+    margin: 0;
+
+    &.is-single, &.is-square {
+        height: 100%;
+
+        li {
+            width: 100%;
+            margin: 0;
+
+            a {
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 60px;
+                    margin-bottom: 1rem;
+                }
+
+                i.fa {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    &.row-of-squares {
+        li {
+            width: 100%;
+            margin: 0 0.4rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.is-vertical {
+        flex-direction: column;
+
+        li {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &.is-solid {
+        li {
+            a {
+                border: 1.2px solid @gray-lightest;
+                color: @primary-brand;
+                font-weight: @link-weight;
+                font-size: 1rem;
+                position: relative;
+                background: @gray-lightest;
+                border-radius: @base-button-radius;
+
+                &:before {
+                    color: @primary-brand !important;
+                }
+
+                &:hover, &:focus {
+                    color: @white;
+                    border: 1.2px solid @primary-brand;
+                    background: @primary-brand;
+
+                    &:before {
+                        color: @white !important;
+                    }
+                }
+            }
+        }
+    }
+    //remove hover when .has-img
+    &.is-solid.has-img {
+        li {
+            a {
+                &:hover, &:focus {
+                    color: @link-color-hover;
+                    border: 1.2px solid @link-color-hover;
+                    background: @white;
+                }
+            }
+        }
+    }
+
+    &.is-square {
+        li {
+            a {
+                border-radius: @radius-large !important;
+            }
+        }
+    }
+
+    &.l5 li {
+        width: 20%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.l4 li {
+        width: 25%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.l3 li {
+        width: 33.3%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.l1 li {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &.l2 li {
+        width: 50%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    li {
+        list-style: none !important;
+        margin: 0.2rem 0.5rem;
+
+        a {
+            box-sizing: border-box;
+            padding: 1.1rem 1.6rem;
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            &:hover, &:focus {
+                -webkit-transition: background-color 200ms linear;
+                -ms-transition: background-color 200ms linear;
+                transition: background-color 200ms linear;
+
+                + .link-subtext {
+                    color: @white !important;
+                }
+            }
+        }
+    }
+
+    li {
+        a {
+            border: 1.2px solid @primary-brand;
+            color: @white;
+            font-weight: @link-weight;
+            font-size: 1rem;
+            position: relative;
+            background: @primary-brand;
+            border-radius: @base-button-radius;
+
+            &.has-icon.has-subtext {
+                padding: 1rem 1rem 3rem 3.35rem;
+
+                &:before {
+                    top: 50%;
+                    margin-top: -0.6rem;
+                    position: absolute;
+                    left: 1.6rem;
+                }
+
+                + .link-subtext {
+                    margin: -2.1rem 1rem 0 1.65rem;
+                    padding: 0 1rem 0 1.85rem;
+                    color: @gray-dark;
+                }
+            }
+
+            &.has-icon:not(.fa-icon) {
+                //these are from vanilla version 1
+                &.icon-calendar:before {
+                    content: "\f073";
+                }
+
+                &.icon-info:before {
+                    content: "\f129";
+                }
+
+                &.icon-book:before {
+                    content: "\f02d";
+                }
+
+                &.icon-org:before {
+                    content: "\f0e8";
+                }
+
+                &.icon-profile-card:before {
+                    content: "\f2c2";
+                }
+
+                &.icon-policy:before {
+                    content: "\f1c4";
+                }
+
+                &.icon-tick:before {
+                    content: "\f00c";
+                }
+
+                &.icon-support:before {
+                    content: "\f059";
+                }
+
+                &.icon-team:before {
+                    content: "\f0c0";
+                }
+
+                &.icon-list:before {
+                    content: "\f03a";
+                }
+
+                &:before {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    color: @white;
+                    font-size: 1.1rem;
+                    content: "\f14c";
+                    margin-right: 0.6rem;
+                }
+            }
+
+            &.fa-icon .fa {
+                font-size: 130%;
+                margin-right: 0.75rem;
+                position: relative;
+                top: 0.15rem;
+            }
+
+            &.has-subtext {
+                padding: 1rem 1rem 3rem 1.6rem;
+                // Extend link
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    z-index: 3;
+                }
+            }
+
+            &:hover, &:focus {
+                color: @primary-brand;
+                border: 1.2px solid @primary-brand;
+                background: @white;
+
+                &:before {
+                    color: @yellow;
+                }
+            }
+        }
+
+        .link-subtext {
+            font-size: 0.8rem;
+            color: @white;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+            z-index: 3;
+            padding: 0.2rem 1rem 0.2rem 1.75rem;
+            margin: -2.5rem 0 0;
+            position: relative;
+        }
+    }
+
+    li {
+        a:hover {
+            &.has-icon:not(.fa-icon) {
+                &:before {
+                    color: @primary-brand;
+                }
+            }
+        }
+    }
+}
+//remove hover when .has-img
+.quick-links-hp.has-img:not(.is-solid) {
+    li {
+        a {
+            &:hover, &:focus {
+                color: @white;
+                border: 1.5px solid @primary-brand;
+                background: @primary-brand;
+            }
+        }
+    }
+}
+
+// center align when only text
+.quick-links-hp li {
+    a:not(.has-icon) {
+        text-align: center;
+    }
+}
+
+// CKeditor / Template support
+// ------------------------------------------------------------
+.ckeditor-temp {
+    img:last-of-type {
+        margin-bottom: 0;
+    }
+
+    P:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+// Template Outlines
+// --------------------------
+body.cke_editable .temp-temp-all {
+    margin-top: 2rem;
+    border: 1px solid @body-background;
+    position: relative;
+
+    &:after {
+        display: block;
+        min-width: 50px;
+        height: auto;
+        position: absolute;
+        right: 0;
+        font-size: 0.7rem;
+        text-align: center;
+        font-weight: @base-heading-font-weight;
+        content: "Page Template";
+        top: -1.5rem;
+        padding: 0.2rem .8rem;
+        background: @gray-light;
+        color: @base-text-color;
+    }
+}
+
+body.cke_editable .temp-temp {
+    border: 1px dashed @gray-light;
+    position: relative;
+
+    &:after {
+        display: block;
+        min-width: 50px;
+        height: auto;
+        position: absolute;
+        right: 0;
+        font-size: 0.7rem;
+        text-align: center;
+        font-weight: @base-heading-font-weight;
+        content: "Snippet";
+        top: 0;
+        padding: 0.2rem .5rem;
+        background: @gray-lightest;
+        color: @base-text-muted;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px dashed @primary-brand;
+    }
+}
+// Enable tab pane view
+body.cke_editable .tab-pane,
+body.cke_editable .nav-tabs.ckeditor-tabs-blue {
+    border: 1px dashed @gray-light;
+    position: relative;
+    padding: 0.5rem 0 0.5rem 0;
+
+    &:after {
+        display: block;
+        min-width: 50px;
+        height: auto;
+        position: absolute;
+        right: 0;
+        font-size: 0.7rem;
+        text-align: center;
+        font-weight: @base-heading-font-weight;
+        top: 0;
+        padding: 0.2rem .5rem;
+        background: @gray-lighter;
+        color: @base-text-color;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px dashed @primary-brand;
+        padding: 0.5rem 0 0.5rem 0;
+    }
+}
+
+body.cke_editable .tab-pane {
+    &:after {
+        content: "Tab Pane";
+    }
+}
+
+body.cke_editable .nav-tabs.ckeditor-tabs-blue {
+    &:after {
+        content: "Tab List";
+    }
+}
+
+.temp-temp {
+    ul, ol {
+        margin-left: 1rem;
+    }
+}
+
+.temp-gradient-bl {
+    background-repeat: repeat-y;
+    background-image: linear-gradient(45deg,@primary-brand 1%, darken(@primary-brand,5%) 50%);
+    background-size: 5px;
+    padding-left: 1rem;
+}
+
+.temp-gray-lightest {
+    background-color: @gray-lightest;
+}
+
+.temp-primary-text {
+    color: @primary-brand !important;
+}
+
+.temp-secondary-text {
+    color: @secondary-brand;
+}
+
+.temp-primary {
+    background-color: @primary-brand;
+}
+
+.temp-secondary {
+    background-color: @secondary-brand;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, small {
+    &.temp-white-text {
+        color: @white !important;
+    }
+}
+
+ul.temp-white-text {
+    li {
+        color: @white;
+    }
+}
+
+.temp-white-link {
+    color: white;
+
+    &:hover, &:focus {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+
+.temp-primary-grad-45 {
+    background: @primary-brand;
+    background: linear-gradient(-45deg, @primary-brand 1%, darken(@primary-brand,5%) 50%);
+    box-sizing: border-box;
+}
+
+.temp-bb-primary {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-left: 0 !important;
+
+    &:after {
+        background-color: @primary-brand;
+    }
+
+    &:after {
+        content: "";
+        width: 100px;
+        height: 4px;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        bottom: 0rem;
+    }
+}
+
+// Snippet border colours
+.temp-bb-secondary {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-left: 0 !important;
+
+    &:after {
+        background-color: @secondary-brand;
+    }
+
+    &:after {
+        content: "";
+        width: 100px;
+        height: 4px;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        bottom: 0rem;
+    }
+}
+
+.bb-left:after {
+    margin-left: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+}
+
+.temp-bbonly-secondary {
+    border-bottom: 3px solid @secondary-brand;
+}
+
+.temp-gradient-bt {
+    background-image: linear-gradient(260deg,@primary-brand 1%, darken(@primary-brand,5%) 50%);
+    padding-top: 5px;
+}
+
+// Snippet Blockquote
+.temp-blockquote {
+    border-left: none;
+    font-style: normal;
+    margin: 0;
+
+    small, strong {
+        margin-left: 2rem;
+    }
+
+    p {
+        font-size: @size-7;
+    }
+
+    .temp-quote {
+        font-size: @size-5 !important;
+        font-weight: @base-heading-font-weight;
+        margin-left: 2rem;
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem !important;
+
+        &:after {
+            background-color: @secondary-brand;
+            content: "";
+            width: 50px;
+            height: 2px;
+            position: absolute;
+            left: 0%;
+            bottom: 0rem;
+        }
+
+        &:before {
+            position: absolute;
+            font-size: 3em;
+            line-height: 1;
+            top: -.5rem;
+            left: -2.5rem;
+            content: "\201C";
+        }
+    }
+
+    p, span, small, strong {
+        color: @white !important;
+    }
+}
+
+// Helper - make IMG's full width
+.temp-img-cover {
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+// Buttons (allow buttons in editor - does not include size options - btn-large etc.
+body.cke_editable .button {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    padding: @base-button-padding-vertical @base-button-padding-horizontal;
+    background: @base-button-background;
+    border: 1px solid @base-button-border;
+    border-bottom-color: @base-button-border;
+    border-radius: @base-button-radius;
+    box-shadow: none;
+    color: @base-button-color;
+    font-size: 0.75rem;
+    line-height: @base-line-height;
+    text-shadow: none;
+    min-height: @base-button-height;
+
+    &.btn-medium, &.is-medium-button {
+        // padding: 0.45rem 1.1rem; - med button padding
+        padding: @base-button-padding-vertical @base-button-padding-horizontal;
+        font-size: 1.05rem;
+    }
+
+    &.btn-primary, &.is-primary {
+        background: @button-primary-background;
+        border: @button-primary-border;
+        color: @button-primary-item;
+
+        &.is-solid {
+            background: @button-primary-solid-background;
+            color: @button-primary-solid-item;
+            border: @button-primary-solid-border;
+
+            &:hover, &:active, &:focus {
+                background: @button-primary-background;
+                border: @button-primary-border;
+                color: @button-primary-item;
+            }
+        }
+    }
+}
+
+.temp-lead-text {
+    font-size: @size-1;
+}
+
+.collapse-group {
+    a.collapse-toggle {
+        padding: 0 0 0.5rem;
+        display: block;
+        color: @link-color;
+        font-weight: @link-weight;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid @gray-lighter;
+
+        &:hover, &:focus {
+            color: @link-color-hover;
+            font-weight: @link-weight-hover;
+        }
+
+        &.collapsed {
+            color: @link-color-hover;
+            font-weight: @link-weight-hover;
+
+            &:hover, &:focus {
+                color: @link-color;
+                font-weight: @link-weight;
+            }
+        }
+    }
+
+    .collapse-inner p {
+        margin-bottom: 1rem;
+    }
+}
+
+ul.nav.nav-tabs.temp-tabs-primary {
+    margin-left: 0;
+}
+
+
+///Global - H1s in black
+h1 { color: @black; }
