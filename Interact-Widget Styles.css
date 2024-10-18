@@ -1,0 +1,215 @@
+.WidgetFreeText_ConfigBody #WidgetConfigLayouts ul {
+  height: 240px !important;
+}
+.WidgetFreeText_Config .WidgetFreeText_ConfigBody .span6 {
+  padding: 15px 15px;
+}
+.WidgetFreeText_Config .WidgetFreeText_ConfigBody .span12 {
+  padding: 15px 15px;
+}
+.WidgetFreeText_Config .WidgetFreeText_ConfigBody h3 {
+  margin-top: 0;
+}
+.WidgetFreeText_Config {
+  padding: 0;
+}
+.WidgetFreeText_Config section {
+  padding: 0;
+}
+.WidgetFreeText_Config #WidgetFreeText_ConfigOptions p {
+  margin-bottom: 0;
+}
+.Widget_FreeText_Standard .headline-image {
+  overflow: hidden;
+  height: 320px;
+  padding: 0;
+  position: relative;
+}
+.Widget_FreeText_Standard .headline-image img {
+  width: 100%;
+}
+.Widget_FreeText_Standard .headline-image .headline-image-details {
+  background-color: #333;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  padding: 10px;
+}
+.Widget_FreeText_Standard .headline-image-details a {
+  color: #fff;
+  text-decoration: none;
+}
+.Widget_FreeText_Standard .headline-image-details a:hover {
+  color: #e2e2e2;
+}
+.Widget_FreeText_Standard .headline-image-details h2 {
+  margin: 0;
+  padding: 0;
+}
+.Widget_FreeText_Standard ul li .headline-image-details {
+  background-color: #333;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  padding: 10px;
+  width: 100%;
+}
+ul#header-widget .widgetHeader,
+ul#footer-widget .widgetHeader {
+  z-index: 1;
+}
+ul#header-widget.edited > li,
+ul#footer-widget.edited > li {
+  min-height: 28px;
+}
+ul#header-widget,
+ul#footer-widget {
+  margin: 0;
+  width: auto;
+  list-style: none;
+  list-style-type: none;
+  overflow: hidden;
+}
+#header-widget > li,
+#footer-widget > li {
+  width: auto;
+  margin: 0;
+  height: auto;
+  list-style: none;
+  list-style-type: none;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+#header-widget .addItemButton,
+#footer-widget .addItemButton {
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+#header-widget .widgetHeader,
+#footer-widget .widgetHeader {
+  top: 5px;
+}
+#header-widget.statusDeleted,
+#footer-widget.statusDeleted {
+  height: 70px;
+}
+#footer-widget.edited {
+  margin-bottom: 43px;
+}
+a.widgetBodyCentered {
+  text-align: center;
+  display: block;
+}
+.ContentWidgetConfig .ContentWidgetSiteLimitLimited {
+  background-color: #33b5e5;
+}
+.ContentWidgetConfig .ContentWidgetSiteLimit p {
+  margin: 0 !important;
+  padding-top: 3px;
+}
+.ContentWidgetConfig .ContentWidgetSiteLimitLimited p {
+  color: #000 !important;
+}
+.ContentWidgetConfig .ContentWidgetConfigBody h3 {
+  margin-top: 0;
+}
+.ContentWidgetConfig {
+  padding: 0;
+}
+.ContentWidgetConfig section {
+  padding: 0;
+}
+.ContentWidgetConfig #ContentWidgetConfigOptions p {
+  margin-bottom: 0;
+}
+.ContentWidgetConfig #ContentWidgetConfigOptions section {
+  margin: 10px 0 10px 0;
+}
+.ContentWidgetConfig #ContentWidgetConfigOptions h4 {
+  margin-bottom: 10px;
+}
+.ContentWidgetConfig
+  #ContentWidgetConfigOptions
+  input#ContentWidgetTitleTextBox {
+  width: 100%;
+}
+.ContentWidgetConfig
+  #ContentWidgetConfigOptions
+  input#ContentWidgetTitleUtlTextBox {
+  width: 100%;
+}
+.ContentWidgetConfig
+  #ContentWidgetConfigOptions
+  div#ContentWidgetConfigOptionsItems {
+  height: 210px;
+  width: 320px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+}
+.ii_widget_result_teamimage {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+div.scrollbarpaper-container {
+  position: absolute;
+  z-index: 1;
+}
+div.scrollbarpaper-track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: #9c9fa3;
+  width: 8px;
+}
+div.scrollbarpaper-drag {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #bec0c2;
+}
+div.scrollbarpaper-drag-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+div.scrollbarpaper-drag-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+  direction: rtl;
+}
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+  padding: 0;
+  width: 100%;
+}
+.jcarousel-skin-tango .jcarousel-clip {
+  overflow: hidden;
+}
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+  height: 95px;
+  width: 100%;
+}
+.jcarousel-skin-tango .jcarousel-item {
+  height: 78px;
+  margin: 0 5px 15px 0 !important;
+  width: 87.1px;
+}
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+  margin-left: 0;
+  margin-right: 0;
+}
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+  margin-left: 10px;
+  margin-right: 0;
+}
